@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>
+            My Personal Portfolio 
+        </title> 
+    </head>
+
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-text">
+                    <p>
+                        Welcome to my Portfolio Website
+                    </p>
+
+                    <h1>
+                        Hi, I'm <span>Gunbir Walia</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- About Section -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="Images/Gunbir.jpg">
+                    </div>
+
+                    <div class="about-col-2">
+                        <h1 class="subtitle">
+                            About Me
+                        </h1>
+
+                        <p>
+                            A conscientious and inquisitive student with a strong passion for leveraging technology to solve complex challenges. I
+                            have a deep curiosity for software engineering and artificial intelligence, supported by hands-on experience in machine
+                            learning, natural language processing and LLM-driven applications. Known for my ability to innovate, collaborate
+                            effectively, and deliver impactful results.
+                        </p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">
+                                Skills
+                            </p>
+
+                            <p class="tab-links" onclick="opentab('experience')">
+                                Experience
+                            </p>
+
+                            <p class="tab-links" onclick="opentab('education')">
+                                Education
+                            </p>
+                        </div>
+
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li>
+                                    <span>
+                                        UI/UX
+                                    </span>
+                                    <br>
+                                    Designing Web/App Interfaces
+                                </li>
+
+                                <li>
+                                    <span>
+                                        Web Development
+                                    </span>
+                                    <br>
+                                    Web app Development
+                                </li>
+
+                                <li>
+                                    <span>
+                                        App Development
+                                    </span>
+                                    <br>
+                                    Building Android/iOS apps
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li>
+                                    <span>
+                                        2021-Current
+                                    </span>
+                                    <br>
+                                    UI/UX Design Training at ET Institute
+                                </li>
+                        
+                                <li>
+                                    <span>
+                                        2019-2021
+                                    </span>
+                                    <br>
+                                    Tea, lead at StarApp LLC.
+                                </li>
+                        
+                                <li>
+                                    <span>
+                                        2017-2019
+                                    </span>
+                                    <br>
+                                    UI/UX Design Executive at Coin Digitial Ltd
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li>
+                                    <span>
+                                        2016
+                                    </span>
+                                    <br>
+                                    UI/UX Design Training at ET Institute
+                                </li>
+                        
+                                <li>
+                                    <span>
+                                        2016
+                                    </span>
+                                    <br>
+                                    MBA from MIT Bangalore
+                                </li>
+                        
+                                <li>
+                                    <span>
+                                        2014
+                                    </span>
+                                    <br>
+                                    BBA from ISM Bangalore
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+         
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">
+                            Get in Touch
+                        </h1>
+
+                        <p>
+                            gwaliammv@gmail.com
+                        </p>
+
+                        <p>
+                            +44 7405960024
+                        </p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/gunbir-walia"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/Gunbir-Walia"><i class="fa-brands fa-github"></i></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-right">
+                        <form>
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            
+            function opentab(tabname) {
+                for(tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+
+                for (tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+    </body>
+</html>
