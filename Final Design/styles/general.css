@@ -1,29 +1,19 @@
-/* --- 1. The Smooth Scroll --- */
-/* This is what makes the page "flow down" */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Animate the scroll movement when navigating to an anchored position in the same webpage*/
 }
 
-/* --- 2. Basic Body & Section Styling --- */
 body {
     font-family: 'Poppins', sans-serif;
-    /* A clean font */
-    margin: 0;
-    padding: 0;
-    /* Removes default browser margin and padding */
+    margin: 0; /* Removing default browser margin */
+    padding: 0; /* Removing default browser padding */
     box-sizing: border-box;
-    background-color: #0d151e;
+    background-color: #080808;
     color: white;
 }
 
-/* Give each section some space so we can scroll to them */
-/* We also add 'scroll-margin-top' to prevent the header from blocking the section title */
 section {
-    height: 100vh;
-    /* Makes each section fill the screen. Change this later! */
+    height: 100vh; /* Makes each section fill the entire screen. Will need to change this later when I have added content */
     padding: 60px 20px 20px 20px;
     box-sizing: border-box;
-    /* Ensures padding doesn't add to the height */
-    scroll-margin-top: 80px;
-    /* Adjust this to match your header height */
+    scroll-margin-top: 10px;
 }
