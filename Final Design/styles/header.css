@@ -1,9 +1,21 @@
 .header {
-    background-color: black;
-    padding: 10px 20px;
+    background-color: #080808;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: sticky; /* Makes the nav bar stick to the top when you scroll down. Similar to position: fixed; */
     top: 0; /* Header will stick to the top of viewport */
     z-index: 100; /* Ensures it stays on top of other content */
+    width: 100%;
+    border-bottom: 1px solid #222;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap
 }
 
 .header nav ul {
@@ -12,18 +24,29 @@
     list-style: none; /* Removes the bullet points */
     display: flex; /* Makes the header a horizontal list, instead of vertical */
     justify-content: center;
-    gap: 20px; /* Adding space between each item in header */
+    gap: 50px; /* Adding space between each item in header */
 }
 
 .header nav ul li a {
     color: white;
     text-decoration: none; /* Removes the underline from links (Since all the elements in the header are essentially links to other sections on this webpage */
+    font-size: 18px;
     font-weight: bold;
-    padding: 10px;
     transition: color 0.3s;
+    position: relative;
 }
 
-.header nav ul li a:hover {
-    color: #007bff;
-    /* Changes color when you hover */
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #ff004f, #4743EF);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
