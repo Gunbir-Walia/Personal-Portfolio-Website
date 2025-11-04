@@ -27,3 +27,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // This creates the new typing animation
     var typed = new Typed('#typed-text-target', options);
 });
+
+// Collect all elements with class name 'tab-link' (which contains the tab titles) and 'tab-content' (which contains the content within each of those tabs)
+var tablinks = document.getElementsByClassName("tab-link");
+var tabcontents = document.getElementsByClassName("tab-content");
+
+// Function will run when the user clicks a tab
+function opentab(event, tabname) {
+    // Removing the "active" class from all tab buttons
+    for (var tablink of tablinks) {
+        tablink.classList.remove("active-link");
+    }
+
+    // Removing the "active" class from all tab content
+    for (var tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+    }
+
+    // Adding "active" class to the *clicked* tab button
+    event.currentTarget.classList.add("active-link");
+
+    // Adding "active" class to the corresponding content pane 
+    document.getElementById(tabname).classList.add("active-tab");
+}

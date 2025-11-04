@@ -39,3 +39,72 @@
     margin-bottom: 20px;
 }
 
+
+
+.skills-tabs {
+    margin-top: 40px;
+}
+
+.tab-titles {
+    display: flex; /* Display the tab titles horizontally */
+    margin-bottom: 10px;
+}
+
+.tab-link {
+    margin-right: 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #aaa; /* Default color for inactive tabs */
+    cursor: pointer;
+    position: relative; /* Needed for the underline effect (Same as header underline animation) */
+    transition: color 0.3s;
+}
+
+.tab-link:hover {
+    color: #fff; /* Brighten text colour on hover */
+}
+
+/* Underline effect */
+.tab-link::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #ff004f, #4743EF);
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: width 0.4s;
+}
+
+.tab-link.active-link::after {
+    width: 100%;
+}
+
+.tab-link.active-link {
+    color: #fff;
+}
+
+.tab-content {
+    display: none; /* Initally, all tab content is hidden */
+}
+
+.tab-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tab-content ul li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.tab-content ul li span {
+    color: #ff004f;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tab-content.active-tab {
+    display: block; /* Changing the display from 'none' to 'block' for only the active-tab so that its content will be visible */
+}
