@@ -24,13 +24,13 @@ nav {
     list-style: none; /* Removes the bullet points */
     display: flex; /* Makes the header a horizontal list, instead of vertical */
     justify-content: center;
-    gap: 50px; /* Adding space between each item in header */
+    gap: 60px; /* Adding space between each item in header */
 }
 
 .header nav ul li a {
     color: white;
     text-decoration: none; /* Removes the underline from links (Since all the elements in the header are essentially links to other sections on this webpage */
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     transition: color 0.3s;
     position: relative;

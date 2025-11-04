@@ -4,9 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // These are the strings it will type
     const stringsToType = [
         'Computer Science Student',
-        'Future Software Engineer',
-        'Passionate Problem Solver',
-        'Web Developer'
+        'Software Engineer',
+        'Data Scientist',
+        'AI/ML Engineer',
+        'Web Developer',
+        'Data Analyst',
+        'Passionate Problem Solver'
     ];
 
     // These are the options for the typing animation
