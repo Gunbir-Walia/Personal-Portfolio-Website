@@ -1,0 +1,41 @@
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    display: flex; /* In order to create the two-column layout */
+    align-items: center; /* Vertically centering the content in each column */
+    max-width: 1200px; /* Max width for your content */
+    width: 90%; /* Use 90% of the screen width */
+    gap: 40px; /* Space between the columns */
+}
+
+.about-image {
+    flex-basis: 35%; /* Image column takes up 35% of the space */
+}
+
+.about-image img {
+    width: 100%; /* Image should fill its container */   
+    border-radius: 30px;
+}
+
+.about-text {
+    flex-basis: 65%; /* Text column takes up 65% of the space */
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
