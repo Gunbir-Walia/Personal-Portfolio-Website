@@ -1,0 +1,43 @@
+#home {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;/* Center vertically */
+    text-align: center;
+}
+
+.home-content .home-intro {
+    font-family: 'Playfair Display', serif; 
+    font-size: 6rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #ddd;
+    margin-bottom: 350px;
+}
+
+.home-content h1 {
+    font-size: 4rem; 
+    margin-bottom: 10px;
+}
+
+.home-content .home-subtitle {
+    font-size: 2.5rem; 
+    color: #ccc; 
+    margin-top: 60px;
+}
+
+.home-subtitle .typed-cursor {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+#typed-text-target {
+    background: linear-gradient(to right, #ff004f, #4743EF); /* Setting the background color of text to linear gradient */
+    -webkit-background-clip: text; /* Clipping the background colour to only the text shape */
+    background-clip: text; /* Clipping the background colour to only the text shape (For non webkit based browsers) */
+    color: transparent; /* Making the text color transparent to show the gradient */
+}
+
+.home-subtitle .typed-cursor {
+    font-size: 2.5rem;
+    color: #ff004f; /* Matching the starting colour of the gradient */
+}
