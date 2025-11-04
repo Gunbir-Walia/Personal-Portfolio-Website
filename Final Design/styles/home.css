@@ -1,7 +1,7 @@
 #home {
     display: flex;
     justify-content: center; /* Center horizontally */
-    padding-top: 15vh;
+    padding-top: 12vh;
     text-align: center;
 }
 
@@ -10,8 +10,8 @@
     font-size: 6rem;
     font-style: italic;
     font-weight: 400;
-    color: #ddd;
-    margin-bottom: 250px;
+    color: #ff004f;
+    margin-bottom: 180px;
 }
 
 .home-content h1 {
@@ -20,9 +20,9 @@
 }
 
 .home-content .home-subtitle {
-    font-size: 2.5rem; 
+    font-size: 2rem; 
     color: #ccc; 
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 #typed-text-target {
@@ -33,6 +33,6 @@
 }
 
 .home-subtitle .typed-cursor {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #ff004f; /* Matching the starting colour of the gradient */
 }

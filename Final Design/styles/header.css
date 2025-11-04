@@ -1,6 +1,6 @@
 .header {
     background-color: #080808;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -30,7 +30,7 @@ nav {
 .header nav ul li a {
     color: white;
     text-decoration: none; /* Removes the underline from links (Since all the elements in the header are essentially links to other sections on this webpage */
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     transition: color 0.3s;
     position: relative;
