@@ -1,13 +1,15 @@
 #about {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .about-container {
     display: flex; /* In order to create the two-column layout */
-    align-items: center; /* Vertically centering the content in each column */
-    max-width: 1200px; /* Max width for your content */
+    align-items: flex-start; /* Vertically centering the content in each column */
+    max-width: 1400px; /* Max width for your content */
     width: 90%; /* Use 90% of the screen width */
     gap: 40px; /* Space between the columns */
 }
@@ -36,13 +38,11 @@
     font-size: 1.1rem;
     line-height: 1.7;
     color: #aaa;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-
-
 .skills-tabs {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .tab-titles {
