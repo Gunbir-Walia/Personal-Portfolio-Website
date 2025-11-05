@@ -1,0 +1,108 @@
+/* --- Work Experience Section --- */
+
+#work-experience {
+    padding: 80px 0;
+    /* Give it space at the top/bottom */
+    /* Note: 'height: 100vh' from general.css will be a problem
+       if you have lots of content. You may need to remove it! */
+}
+
+/* This container will center your content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* 0 top/bottom, auto left/right */
+}
+
+#work-experience h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    /* Space below the title */
+    color: #ddd;
+}
+
+.experience-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* A single column */
+    gap: 30px;
+    /* Space between each job card */
+}
+
+.experience-item {
+    background: #1a1a1a;
+    /* A dark card color */
+    padding: 30px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.experience-item:hover {
+    background: #222;
+    /* Slightly lighter on hover */
+    transform: translateY(-5px);
+    /* A subtle "lift" effect */
+}
+
+.experience-item h3 {
+    font-size: 1.8rem;
+    color: #ff004f;
+    /* Using your highlight color */
+    margin-bottom: 10px;
+}
+
+.company-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Allows dates to wrap on small screens */
+    gap: 10px;
+}
+
+.company-info h4 {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.company-info span {
+    font-size: 1rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.experience-item ul {
+    list-style-type: disc;
+    /* Back to regular bullets */
+    padding-left: 20px;
+}
+
+.experience-item ul li {
+    font-size: 1rem;
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+/* --- In styles/work-experience.css --- */
+
+.experience-item .project-description,
+.experience-item .project-aim {
+    font-size: 1rem;
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+    /* Makes the description stand out */
+}
+
+.experience-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 20px;
+    /* Add a little space above the bullet points */
+}

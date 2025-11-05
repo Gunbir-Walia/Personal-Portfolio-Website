@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="styles/header.css">
         <link rel="stylesheet" href="styles/home.css">
         <link rel="stylesheet" href="styles/about.css">
+        <link rel="stylesheet" href="styles/work-experience.css">
 
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
@@ -65,29 +66,29 @@
                             <div class="tab-titles">
                                 <p class="tab-link active-link" onclick="opentab(event, 'skills')">Skills</p>
                                 <p class="tab-link" onclick="opentab(event, 'tools')">Tools</p>
-                                <p class="tab-link" onclick="opentab(event, 'frameworks')">Frameworks</p>
+                                <p class="tab-link" onclick="opentab(event, 'frameworks')">Frameworks/Libraries</p>
                             </div>
                             
                             <div class="tab-content active-tab" id="skills">
                                 <ul>
                                     <li><span>Languages</span><br>Java, Python, Kotlin, C#, JavaScript</li>
-                                    <li><span>Concepts</span><br>Data Structures, Algorithms, OOP</li>
-                                    <li><span>Other</span><br>HTML, CSS, SQL</li>
+                                    <li><span>Concepts</span><br>Machine Learning, Computer Vision, Natural Language Processing, Data Science, Evolutionary Genetic Algorithms, Artificial Neural Networks, Retrieval-Augmented Generation, Agentic AI, Vector Search, Data Structures & Algorithms, Object-Oriented Programming</li>
+                                    <li><span>Other</span><br>HTML, CSS, ANTLR</li>
                                 </ul>
                             </div>
                             
                             <div class="tab-content" id="tools">
                                 <ul>
-                                    <li><span>Development</span><br>VS Code, Jupyter Notebook, IntelliJ</li>
+                                    <li><span>Development</span><br>IntelliJ, PyCharm, VS Code, Blender, Unity, Figma, MATLAB, Jupyter Notebook, Google Colab, BlueJ</li>
                                     <li><span>Version Control</span><br>Git & GitHub</li>
-                                    <li><span>Database</span><br>MySQL, MongoDB</li>
+                                    <li><span>Database</span><br>MySQL, SQLite</li>
                                 </ul>
                             </div>
                             
                             <div class="tab-content" id="frameworks">
                                 <ul>
-                                    <li><span>Web</span><br>React, Node.js, Flask</li>
-                                    <li><span>AI/ML</span><br>TensorFlow, Scikit-learn, Pandas</li>
+                                    <li><span>AI/ML</span><br>NumPy, Pandas, Matplotlib, TensorFlow, Scikit-learn, NLTK, OpenCV</li>
+                                    <li><span>Web</span><br></li>
                                 </ul>
                             </div>
                         </div>
@@ -96,9 +97,43 @@
             </section>
 
             <section id="work-experience">
-                <h2>
-                    Work Experience
-                </h2>
+                <div class="container">
+                    <h2>Work Experience</h2>
+            
+                    <div class="experience-list">
+            
+                        <div class="experience-item">
+                            <h3>A.I. Intern</h3>
+                            <div class="company-info">
+                                <h4>Erasmith (Internship)</h4>
+                                <span>Jun 2025 - Present</span>
+                            </div>
+            
+                            <p class="project-description">
+                                Working on the design and development of an agentic AI system for intelligent contract
+                                analysis and automated document generation, combining Retrieval-Augmented Generation (RAG),
+                                dynamic templates, and local LLMs to enable secure and scalable business automation.
+                            </p>
+            
+                            <p class="project-aim">
+                                The project aims to deliver an integrated platform capable of interpreting business
+                                documents, generating intelligent drafts, and automating workflows through
+                                autonomous, reasoning-capable agents.
+                            </p>
+            
+                            <ul>
+                                <li>Designing and fine-tuning agentic AI workflows using frameworks such as LangChain, AutoGen,
+                                    and CrewAI, enabling autonomous multi-agent task execution.</li>
+                                <li>Implementing prescriptive intelligence modules that simulate contract outcomes and
+                                    generate actionable recommendations.</li>
+                                <li>Building scalable document generation pipelines using custom dynamic templates
+                                    integrated with a secure RAG backend.</li>
+                                <li>Contributing to explainable AI interfaces that visualise reasoning chains and
+                                    improve transparency and user trust.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
             </section>
 
             <section id="education">
