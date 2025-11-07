@@ -61,3 +61,77 @@
     color: #aaa;
     margin: 0; /* Removing default paragraph margin */
 }
+
+/* --- Expandable Cards --- */
+
+/* Makes the "visible" part of the card clickable  */
+.education-visible {
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+}
+
+/* Adding a '+' icon to show it's expandable in the top right of the card */
+.education-visible::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    color: #aaa;
+    transition: transform 0.3s ease-out;
+}
+
+/* Initially hidden content */
+.education-hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.education-hidden h5 {
+    font-size: 1.1rem;
+    color: #00eaff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-top: 2px solid #222;
+    padding-top: 20px;
+}
+
+.education-hidden ul {
+    list-style: none;
+    padding: 0;
+}
+
+.education-hidden ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 5px;
+}
+
+.education-hidden .subject {
+    color: #aaa;
+}
+
+.education-hidden .mark {
+    color: #fff;
+    font-weight: 600;
+    padding-left: 20px;
+    flex-shrink: 0;
+}
+
+/* --- The "Active" State (When Clicked) --- */
+
+/* Changing the icon from '+' to '−' */
+.education-item.active .education-visible::after {
+    content: '−';
+    transform: translateY(0px);
+}
+
+/* Expanding the hidden content */
+.education-item.active .education-hidden {
+    max-height: 1100px; 
+}
