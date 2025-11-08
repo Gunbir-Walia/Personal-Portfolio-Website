@@ -73,5 +73,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+
+    // --- Certifications Buttons Filter Mechanism ---
+
+    const filterContainer = document.querySelector(".filter-buttons");
+    const certItems = document.querySelectorAll(".cert-item");
+
+    // Only run this code if the filter buttons exist on the page
+    if (filterContainer) {
+
+        filterContainer.addEventListener("click", function (evt) {
+            // Only runs if a button was clicked
+            if (evt.target.classList.contains("filter-btn")) {
+
+                // Removing 'active' state from the old button
+                filterContainer.querySelector(".active").classList.remove("active");
+                // Adding 'active' state to the new button
+                evt.target.classList.add("active");
+
+                // Filtering the cards
+                const filterValue = evt.target.getAttribute("data-filter");
+
+                certItems.forEach(item => {
+                    const itemCategory = item.getAttribute("data-category");
+
+                    if (filterValue === "all" || filterValue === itemCategory) {
+                        item.classList.remove("hide");
+                    } else {
+                        item.classList.add("hide");
+                    }
+                });
+            }
+        });
+    }
 });
+
 

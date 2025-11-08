@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="styles/about.css">
         <link rel="stylesheet" href="styles/work-experience.css">
         <link rel="stylesheet" href="styles/education.css">
+        <link rel="stylesheet" href="styles/certifications.css">
 
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
@@ -223,9 +224,51 @@
 
 
             <section id="certifications">
-                <h2>
-                    Certifications
-                </h2>
+                <div class="container">
+                    <h2>Certifications</h2>
+            
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="oracle">OCI</button>
+                        <!-- <button class="filter-btn" data-filter="aws">AWS</button>
+                        <button class="filter-btn" data-filter="azure">Azure</button> -->
+                        <button class="filter-btn" data-filter="harvardx">Other</button>
+                    </div>
+            
+                    <div class="certifications-list">
+                        
+                        <div class="cert-item" data-category="oracle">
+                            <h3>Oracle AI Vector Search Professional</h3>
+                            <p>Issued by: Oracle</p>
+                        </div>
+
+                        <div class="cert-item" data-category="oracle">
+                            <h3>Oracle Cloud Infrastructure Generative AI Professional</h3>
+                            <p>Issued by: Oracle</p>
+                        </div>
+            
+                        <div class="cert-item" data-category="oracle">
+                            <h3>Oracle Cloud Infrastructure Data Science Professional</h3>
+                            <p>Issued by: Oracle</p>
+                        </div>
+            
+                        <div class="cert-item" data-category="oracle">
+                            <h3>Oracle Fusion AI Agent Studio</h3>
+                            <p>Issued by: Oracle</p>
+                        </div>
+            
+                        <div class="cert-item" data-category="harvardx">
+                            <h3>CS50's Introduction to Databases with SQL</h3>
+                            <p>Issued by: HarvardX</p>
+                        </div>
+            
+                        <div class="cert-item" data-category="aws">
+                            <h3>Example: AWS Certified Cloud Practitioner</h3>
+                            <p>Issued by: Amazon Web Services</p>
+                        </div>
+            
+                    </div>
+                </div> 
             </section>
 
             <section id="projects">
