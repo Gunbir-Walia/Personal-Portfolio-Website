@@ -74,38 +74,122 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // --- Certifications Buttons Filter Mechanism ---
+    
+    // --- 4. CERTIFICATIONS FILTER & PAGINATION ---
 
+    // --- Configuration ---
+    const itemsPerPage = 6; // 2 rows of 3 items
+
+    // --- Get Elements ---
     const filterContainer = document.querySelector(".filter-buttons");
-    const certItems = document.querySelectorAll(".cert-item");
+    const certItems = Array.from(document.querySelectorAll(".cert-item")); // All cert cards
+    const certList = document.querySelector(".certifications-list"); // The list container
+    const paginationContainer = document.querySelector(".pagination-controls"); // The new button div
 
-    // Only run this code if the filter buttons exist on the page
+    // --- State Variables ---
+    let currentPage = 1;
+    let currentFilter = "all";
+
+    // --- Main Function to Show a Page ---
+    function showPage(page, items) {
+        // FIRST, hide ALL certification items on the page
+        certItems.forEach(item => item.classList.add("hide"));
+
+        // Calculate which items to show
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const itemsToShow = items.slice(startIndex, endIndex);
+
+        // Show just the items for the current page
+        itemsToShow.forEach(item => item.classList.remove("hide"));
+    }
+
+    // --- Function to Create Page Buttons ---
+    function setupPagination(items) {
+        // Clear old buttons
+        paginationContainer.innerHTML = "";
+
+        const totalPages = Math.ceil(items.length / itemsPerPage);
+
+        // If we only have 1 page, don't show any buttons
+        if (totalPages <= 1) {
+            paginationContainer.style.display = "none";
+            return;
+        }
+
+        // Show the container
+        paginationContainer.style.display = "flex";
+
+        // Create a button for each page
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement("button");
+            button.classList.add("page-btn");
+            button.innerText = i;
+            button.setAttribute("data-page", i);
+
+            if (i === currentPage) {
+                button.classList.add("active");
+            }
+
+            paginationContainer.appendChild(button);
+        }
+    }
+
+    // --- Function to Handle Filtering ---
+    function filterItems() {
+        currentPage = 1; // Always reset to page 1 on a new filter
+
+        // 1. Get a list of items that match the filter
+        const filteredItems = (currentFilter === "all")
+            ? certItems // If "all", use the full list
+            : certItems.filter(item => item.dataset.category === currentFilter); // Otherwise, filter it
+
+        // 2. Set up the pagination buttons *for the filtered list*
+        setupPagination(filteredItems);
+
+        // 3. Show page 1 *of that filtered list*
+        showPage(currentPage, filteredItems);
+    }
+
+    // --- Click Listeners ---
     if (filterContainer) {
 
+        // 1. Listen for clicks on the FILTER buttons
         filterContainer.addEventListener("click", function (evt) {
-            // Only runs if a button was clicked
             if (evt.target.classList.contains("filter-btn")) {
-
-                // Removing 'active' state from the old button
+                // Update active filter button
                 filterContainer.querySelector(".active").classList.remove("active");
-                // Adding 'active' state to the new button
                 evt.target.classList.add("active");
 
-                // Filtering the cards
-                const filterValue = evt.target.getAttribute("data-filter");
+                // Update the filter state
+                currentFilter = evt.target.dataset.filter;
 
-                certItems.forEach(item => {
-                    const itemCategory = item.getAttribute("data-category");
+                // Re-run the filtering logic
+                filterItems();
+            }
+        });
 
-                    if (filterValue === "all" || filterValue === itemCategory) {
-                        item.classList.remove("hide");
-                    } else {
-                        item.classList.add("hide");
-                    }
-                });
+        // 2. Listen for clicks on the PAGE buttons
+        paginationContainer.addEventListener("click", function (evt) {
+            if (evt.target.classList.contains("page-btn")) {
+                // Get the page number
+                const pageNumber = parseInt(evt.target.dataset.page, 10);
+                currentPage = pageNumber;
+
+                // Show that page
+                const filteredItems = (currentFilter === "all") ? certItems : certItems.filter(item => item.dataset.category === currentFilter);
+                showPage(currentPage, filteredItems);
+
+                // Update the active button
+                paginationContainer.querySelector(".active").classList.remove("active");
+                evt.target.classList.add("active");
             }
         });
     }
+
+    // --- Initial Page Load ---
+    // This runs when the page first loads
+    filterItems();
 });
 
 
