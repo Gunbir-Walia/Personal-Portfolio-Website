@@ -44,13 +44,21 @@
 /* --- Certification Card Styles --- */
 
 .certifications-list {
-    display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap to the next line (Othwerise they would all be on one line)*/
+    display: grid;
+
+    /* Create auto-fitting columns of 400px each */
+    grid-template-columns: repeat(auto-fit, 400px);
+
     justify-content: center;
     gap: 20px;
-    min-height: 420px; /* Forcing the container to always be at least 2 rows tall */
-    align-items: flex-start;
+    min-height: 420px;
+
+    /* This aligns the *entire grid* to the top, 
+       preventing the last row from stretching */
+    align-content: flex-start;
 }
+
+/* Forcing the container to always be at least 2 rows tall */
 
 .cert-item {
     background: #1a1a1a;
@@ -60,9 +68,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-basis: 400px;
-    flex-grow: 0;
-    flex-shrink: 0;
 }
 
 /* Hiding the cards that are filtered out */
