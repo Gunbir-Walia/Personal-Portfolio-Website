@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="styles/work-experience.css">
         <link rel="stylesheet" href="styles/education.css">
         <link rel="stylesheet" href="styles/certifications.css">
+        <link rel="stylesheet" href="styles/projects.css">
 
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
@@ -428,30 +429,6 @@
                             </div>
                         </div>
 
-                        <div class="cert-item" data-category="oracle">
-                            <div class="cert-info">
-                                <h3>Oracle Cloud Infrastructure AI Foundations Associate 2</h3>
-                                <span class="cert-date">Issued: July 2025</span>
-                            </div>
-                        
-                            <div class="cert-footer">
-                                <p class="cert-issuer">Issued by: Oracle</p>
-                                <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=5192B43A29ED7AC14B53FA43D1C10014311AA2A5111DDC280426374CA3C4511A"
-                                    class="cert-link" target="_blank" rel="noopener noreferrer">
-                        
-                                    <span>View Credential</span>
-                        
-                                    <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                        
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-
                         <div class="cert-item" data-category="other">
                             <div class="cert-info">
                                 <h3>Beginners Guide to AI (Artificial Intelligence)</h3>
@@ -554,10 +531,72 @@
                 </div> 
             </section>
 
+            <!-- Projects Section -->
+
             <section id="projects">
-                <h2>
-                    Portfolio
-                </h2>
+                <div class="container">
+                    <h2>Projects</h2>
+            
+                    <div class="projects-list">
+            
+                        <div class="project-item">
+                            <div class="project-info">
+                                <h3>Evolutionary Braitenberg Behaviour</h3>
+
+                                <p>
+                                    This project explores the hypothesis that simple agents evolved using microbial genetic algorithms can coherently
+                                    exhibit a range of intricate behaviours within a simulated environment. However, these behaviours degrade in performance
+                                    or consistency when transferred to physical robots due to the reality gap between the real world and a controlled
+                                    simulation.
+                                </p>
+                                
+                                <ul>
+                                    <li>Designed and developed a simulated 2D environment in Python to evolve Braitenberg vehicles capable of exhibiting
+                                    complex, animal-like behaviours using microbial genetic algorithms.</li>
+                                    <li>Engineered agents with minimal cognitive architecture to display a rich repertoire of behaviours, including aggressor,
+                                    coward, lover, explorer, shy, one-eyed phototaxis, and sequential phototaxis - each evolved through tailored fitness
+                                    functions aligned with specific behavioural objectives</li>
+                                    <li>Modelled each agent’s genome as weighted sensor-to-motor connections with independent biases, enabling direct
+                                    evolutionary optimisation of+ sensorimotor couplings.</li>
+                                    <li>Transferred evolved genotypes to a physical robot using a Raspberry Pi Pico and MicroPython, analysing performance
+                                    degradation due to the simulation-to-reality gap.</li>
+                                    <li>Addressed real-world embodiment challenges such as sensor noise, hardware asymmetries, and directional sensory
+                                    constraints, by adapting training conditions and motor bias strategies.</li>
+                                    <li>Explored and critically analysed foundational principles of embodied cognition, active perception, and sensorimotor
+                                    intelligence, highlighting how emergent behaviour arises from agent–environment interactions rather than internal
+                                    complexity.</li>
+                                </ul>
+                            </div>
+                            <div class="project-links">
+                                <a href="[Your GitHub URL]" class="project-link" target="_blank" rel="noopener noreferrer">
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+            
+                        <div class="project-item">
+                            <div class="project-info">
+                                <h3>Face Alignment</h3>
+                                <p>
+                                    Developed a machine learning model to carry out face alignment and study computer vision. [cite:
+                                    34]
+                                </p>
+                                <ul>
+                                    <li>Pre-processed images to standardise input, improve data quality and reduce noise. [cite: 35]
+                                    </li>
+                                    <li>Implemented a cascaded ridge regression model with SIFT-based local feature extraction to
+                                        accurately predict facial landmarks. [cite: 36]</li>
+                                </ul>
+                            </div>
+                            <div class="project-links">
+                                <a href="[Your GitHub URL]" class="project-link" target="_blank" rel="noopener noreferrer">
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div> 
             </section>
 
             <section id="contact">
