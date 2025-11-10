@@ -1,7 +1,6 @@
-/* --- Projects Section --- */
-
 #projects {
     padding: 80px 0;
+    position: relative;
 }
 
 #projects h2 {
@@ -11,87 +10,144 @@
     color: #ddd;
 }
 
+/* --- Project Card Grid --- */
 .projects-list {
     display: grid;
-    /* This creates a 2-column grid on desktops,
-       and stacks to 1-column on smaller screens */
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Responsive 2-column grid */
     gap: 20px;
-    align-content: flex-start;
-    /* Fixes "last row stretch" */
 }
 
-.project-item {
+.project-card {
     background: #1a1a1a;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     transition: background 0.3s, transform 0.3s;
-
-    /* Use flex to push links to the bottom */
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 15px;
 }
 
-.project-item:hover {
+.project-card:hover {
     background: #222;
     transform: translateY(-5px);
 }
 
-.project-info {
-    flex-grow: 1;
-    /* Allows this to fill space */
-}
-
-.project-item h3 {
+.project-card h3 {
     font-size: 1.5rem;
-    /* Larger than certs */
     color: #ff004f;
-    margin-bottom: 15px;
 }
 
-.project-item p {
+.project-date {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+.project-short-desc {
     font-size: 1rem;
     color: #aaa;
     line-height: 1.7;
-    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
-.project-item ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 15px;
-}
-
-.project-item ul li {
-    font-size: 1rem;
-    color: #aaa;
-    line-height: 1.7;
-    margin-bottom: 10px;
-}
-
-/* --- Project Links Footer --- */
-
-.project-links {
+.project-skills {
     display: flex;
-    justify-content: flex-start;
-    /* Align links to the left */
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    background: #252525;
+    color: #4743EF;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* --- Modal Styles (Hidden Pop-up) --- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px); /* Blur effect when modal is active */
+    display: flex;
+    justify-content: center;
     align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Hide the modal by default */
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+
+.modal.active {
+    opacity: 1; /* Show the modal */
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #1e1e1e; /* Slightly lighter than the card */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px; /* Max width of the pop-up */
+    width: 90%;
+    position: relative;
+    color: #aaa;
+    line-height: 1.7;
+
+    /* Modal Animation*/
+    transform: scale(0.6); /* Modal's initial size before we click (0.6 of its default size)*/
+    transition: transform 0.3s ease;
+
+    max-height: 85vh;
+    overflow-y: auto; /* Adds a scrollbar and lets content overflow properly so we can move the modal up/down */
+}
+
+.modal.active .modal-content {
+    transform: scale(1); /* Modal's size after we click (default size)*/
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close-btn:hover {
+    color: #fff;
+}
+
+#projects .modal-content h2 {
+    font-size: 2rem;
+    color: #ff004f;
+    margin-bottom: 20px;
+}
+
+.modal-links {
+    display: flex;
     gap: 15px;
-    border-top: 1px solid #222;
-    padding-top: 15px;
-    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .project-link {
-    /* Re-use the cert-link style */
     font-size: 0.9rem;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
     background: #333;
-    padding: 5px 12px;
-    border-radius: 5px;
+    padding: 8px 16px;
+    border-radius: 10px;
     transition: background 0.3s;
     display: inline-flex;
     align-items: center;
@@ -99,6 +155,40 @@
 }
 
 .project-link:hover {
+    background: #4743EF;
+}
+
+.modal-body ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.modal-body ul li {
+    margin-bottom: 10px;
+}
+
+/* --- Custom Scrollbar for Modal (Since default one looked quite different to main webpage scrollbar) --- */
+
+/* Targets the scrollbar track (background) */
+.modal-content::-webkit-scrollbar-track {
+    background: #1e1e1e; /* Match the modal's background */
+    border-radius: 10px;
+}
+
+/* Targets the scrollbar itself */
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Targets the scrolbar thumb (the part you drag) */
+.modal-content::-webkit-scrollbar-thumb {
     background: #555;
-    color: #fff;
+    border-radius: 10px;
+    border: 2px solid #1e1e1e;
+}
+
+/* This makes the thumb brighter on hover */
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #777;
 }

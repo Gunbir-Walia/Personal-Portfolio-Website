@@ -1,5 +1,6 @@
-// Wait for the HTML document to finish loading
+// Waiting for the HTML document to finish loading
 document.addEventListener("DOMContentLoaded", function () {
+
 
     // --- Typing Animation ---
 
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var typed = new Typed('#typed-text-target', options);
 
 
+
     // --- About Me Section Tabs ---
     
     // Collect all elements with class name 'tab-link' (which contains the tab titles) and 'tab-content' (which contains the content within each of those tabs)
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     // --- Education Section ---
 
     // Get all elements with class name ".education-visible" 
@@ -75,38 +78,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     
-    // --- 4. CERTIFICATIONS FILTER & PAGINATION ---
+    // --- Certifications Section Filter and Pagination Mechanism ---
 
-    // --- Configuration ---
     const itemsPerPage = 6; // 2 rows of 3 items
 
-    // --- Get Elements ---
     const filterContainer = document.querySelector(".filter-buttons");
-    const certItems = Array.from(document.querySelectorAll(".cert-item")); // All cert cards
-    const certList = document.querySelector(".certifications-list"); // The list container
-    const paginationContainer = document.querySelector(".pagination-controls"); // The new button div
+    const certItems = Array.from(document.querySelectorAll(".cert-item")); // All certificate cards
+    const certList = document.querySelector(".certifications-list"); // List container
+    const paginationContainer = document.querySelector(".pagination-controls"); // Pagination control buttons div
 
-    // --- State Variables ---
     let currentPage = 1;
     let currentFilter = "all";
 
-    // --- Main Function to Show a Page ---
     function showPage(page, items) {
-        // FIRST, hide ALL certification items on the page
+        // Initially, hide all certification items on the page
         certItems.forEach(item => item.classList.add("hide"));
 
         // Calculate which items to show
-        const startIndex = (page - 1) * itemsPerPage;
-        const endIndex = startIndex + itemsPerPage;
-        const itemsToShow = items.slice(startIndex, endIndex);
+        const startIndex = (page - 1) * itemsPerPage; // Calculate the start index of cards (first card) which will be displayed on a certain page
+        const endIndex = startIndex + itemsPerPage; // Calculate the end index of cards (last card) which will be displayed on a certain page
+        const itemsToShow = items.slice(startIndex, endIndex); // Slicing the items list from start index to end index
 
-        // Show just the items for the current page
+        // Show only the items for the current page
         itemsToShow.forEach(item => item.classList.remove("hide"));
     }
 
+
     // --- Function to Create Page Buttons ---
     function setupPagination(items) {
-        // Clear old buttons
+        // Clears any existing content within the paginationContainer element (Remove old pagination buttons before adding new ones)
         paginationContainer.innerHTML = "";
 
         const totalPages = Math.ceil(items.length / itemsPerPage);
@@ -117,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Show the container
         paginationContainer.style.display = "flex";
 
         // Create a button for each page
@@ -135,48 +134,53 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // --- Function to Handle Filtering ---
+    // --- Function to Handle Filtering Mechanism ---
     function filterItems() {
         currentPage = 1; // Always reset to page 1 on a new filter
 
-        // 1. Get a list of items that match the filter
-        const filteredItems = (currentFilter === "all")
-            ? certItems // If "all", use the full list
-            : certItems.filter(item => item.dataset.category === currentFilter); // Otherwise, filter it
+        let filteredItems; 
 
-        // 2. Set up the pagination buttons *for the filtered list*
+        if (currentFilter === "all") {
+            // If the condition is true, assign the full list
+            filteredItems = certItems;
+        } 
+        else {
+            // Otherwise, assign the filtered list
+            filteredItems = certItems.filter(item => item.dataset.category === currentFilter);
+        }
+
+        // Setting up the pagination buttons for the filtered list
         setupPagination(filteredItems);
 
-        // 3. Show page 1 *of that filtered list*
+        // Showing page 1 of that filtered list
         showPage(currentPage, filteredItems);
     }
 
-    // --- Click Listeners ---
     if (filterContainer) {
 
-        // 1. Listen for clicks on the FILTER buttons
+        // Function will run when user click one of the filter buttons
         filterContainer.addEventListener("click", function (evt) {
             if (evt.target.classList.contains("filter-btn")) {
-                // Update active filter button
+                // Updates active filter button
                 filterContainer.querySelector(".active").classList.remove("active");
                 evt.target.classList.add("active");
 
-                // Update the filter state
+                // Sets currentFilter to the clicked button's filter value
                 currentFilter = evt.target.dataset.filter;
 
-                // Re-run the filtering logic
+                // Re-run the filtering logic (To update the displayed items based on the new filter)
                 filterItems();
             }
         });
 
-        // 2. Listen for clicks on the PAGE buttons
+        // Function will run when user click one of the page buttons
         paginationContainer.addEventListener("click", function (evt) {
             if (evt.target.classList.contains("page-btn")) {
-                // Get the page number
+                // Get the corresponding page number
                 const pageNumber = parseInt(evt.target.dataset.page, 10);
                 currentPage = pageNumber;
 
-                // Show that page
+                // Show the corresponding page
                 const filteredItems = (currentFilter === "all") ? certItems : certItems.filter(item => item.dataset.category === currentFilter);
                 showPage(currentPage, filteredItems);
 
@@ -186,10 +190,54 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
-    // --- Initial Page Load ---
-    // This runs when the page first loads
     filterItems();
+
+
+
+    // --- Project Modals ---
+
+    const projectCards = document.querySelectorAll(".project-card");
+    const modals = document.querySelectorAll(".modal");
+    const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+    // Opening a modal
+    const openModal = function (modalId) {
+        const modal = document.querySelector(modalId);
+        if (modal) {
+            modal.classList.add("active");
+        }
+    }
+
+    // Closing a modal
+    const closeModal = function (modal) {
+        modal.classList.remove("active");
+    }
+
+    // When the user clicks on any of the project cards, their corresponding modal will open
+    projectCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const modalId = card.getAttribute("data-modal-target");
+            openModal(modalId);
+        });
+    });
+
+    // When the user clicks on the 'X' button in any of the project modals, it will close that modal
+    modalCloseBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const modal = btn.closest(".modal");
+            closeModal(modal);
+        });
+    });
+
+    // When the user clicks outside of the modal while the modal is active, it will close that modal
+    modals.forEach(modal => {
+        modal.addEventListener("click", (e) => {
+            // Check if the click is on the overlay or the content inside it
+            if (e.target === modal) {
+                closeModal(modal);
+            }
+        });
+    });
 });
 
 

@@ -531,31 +531,67 @@
                 </div> 
             </section>
 
+
             <!-- Projects Section -->
 
             <section id="projects">
+
+                <!-- The Visible Project Cards -->
+
                 <div class="container">
                     <h2>Projects</h2>
             
                     <div class="projects-list">
-            
-                        <div class="project-item">
-                            <div class="project-info">
-                                <h3>Evolutionary Braitenberg Behaviour</h3>
+                        <div class="project-card" data-modal-target="#modal-braitenberg">
+                            <h3>Evolutionary Braitenberg Behaviour</h3>
+                            <span class="project-date">Jan 2024 - Feb 2024</span>
+                            <p class="project-short-desc">
+                                This project explores the hypothesis that simple agents evolved using microbial genetic algorithms can coherently
+                                exhibit a range of intricate behaviours within a simulated environment. However, these behaviours degrade in performance
+                                or consistency when transferred to physical robots due to the reality gap between the real world and a controlled
+                                simulation.
+                            </p>
+                            <div class="project-skills">
+                                <span class="skill-tag">Artificial Intelligence</span>
+                                <span class="skill-tag">Genetic Algorithms</span>
+                                <span class="skill-tag">Embodied AI</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                <p>
-                                    This project explores the hypothesis that simple agents evolved using microbial genetic algorithms can coherently
-                                    exhibit a range of intricate behaviours within a simulated environment. However, these behaviours degrade in performance
-                                    or consistency when transferred to physical robots due to the reality gap between the real world and a controlled
-                                    simulation.
-                                </p>
-                                
+                <!-- The Hidden Modals (The Pop-ups when you click on a card) -->
+
+                <div class="modal-container">
+            
+                    <div class="modal" id="modal-braitenberg">
+                        <div class="modal-content">
+                            <span class="modal-close-btn">&times;</span>
+                            <h2>Evolutionary Braitenberg Behaviour</h2>
+                            <div class="modal-links">
+                                <a href="https://github.com/Gunbir-Walia/Evolutionary-Braitenberg-Behaviour.git" class="project-link" target="_blank" rel="noopener noreferrer">
+                                    <span>GitHub Repo</span>
+                                    <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <p>This project explores the hypothesis that simple agents evolved using microbial genetic algorithms can coherently
+                                exhibit a range of intricate behaviours within a simulated environment. However, these behaviours degrade in performance
+                                or consistency when transferred to physical robots due to the reality gap between the real world and a controlled
+                                simulation.</p>
                                 <ul>
                                     <li>Designed and developed a simulated 2D environment in Python to evolve Braitenberg vehicles capable of exhibiting
                                     complex, animal-like behaviours using microbial genetic algorithms.</li>
                                     <li>Engineered agents with minimal cognitive architecture to display a rich repertoire of behaviours, including aggressor,
                                     coward, lover, explorer, shy, one-eyed phototaxis, and sequential phototaxis - each evolved through tailored fitness
-                                    functions aligned with specific behavioural objectives</li>
+                                    functions aligned with specific behavioural objectives.</li>
                                     <li>Modelled each agent’s genome as weighted sensor-to-motor connections with independent biases, enabling direct
                                     evolutionary optimisation of+ sensorimotor couplings.</li>
                                     <li>Transferred evolved genotypes to a physical robot using a Raspberry Pi Pico and MicroPython, analysing performance
@@ -567,36 +603,9 @@
                                     complexity.</li>
                                 </ul>
                             </div>
-                            <div class="project-links">
-                                <a href="[Your GitHub URL]" class="project-link" target="_blank" rel="noopener noreferrer">
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
                         </div>
-            
-                        <div class="project-item">
-                            <div class="project-info">
-                                <h3>Face Alignment</h3>
-                                <p>
-                                    Developed a machine learning model to carry out face alignment and study computer vision. [cite:
-                                    34]
-                                </p>
-                                <ul>
-                                    <li>Pre-processed images to standardise input, improve data quality and reduce noise. [cite: 35]
-                                    </li>
-                                    <li>Implemented a cascaded ridge regression model with SIFT-based local feature extraction to
-                                        accurately predict facial landmarks. [cite: 36]</li>
-                                </ul>
-                            </div>
-                            <div class="project-links">
-                                <a href="[Your GitHub URL]" class="project-link" target="_blank" rel="noopener noreferrer">
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                        </div>
-            
                     </div>
-                </div> 
+                </div>  
             </section>
 
             <section id="contact">
