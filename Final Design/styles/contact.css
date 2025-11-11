@@ -1,0 +1,147 @@
+/* --- Contact Section --- */
+
+#contact {
+    padding: 80px 0 40px;
+    /* Less padding at the bottom */
+}
+
+#contact h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* --- Contact Left Column --- */
+.contact-left {
+    flex-basis: 35%;
+    /* Left column takes 35% of width */
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #ff004f;
+    /* Highlight color */
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: #aaa;
+    background: #222;
+    border-radius: 50%;
+    transition: all 0.3s;
+
+    /* Center the SVG icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links a:hover {
+    background: #ff004f;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.social-links a svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.btn-download-cv {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #ff004f;
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: background 0.3s;
+}
+
+.btn-download-cv:hover {
+    background: #d40042;
+    /* Darker pink */
+}
+
+/* --- Contact Right Column --- */
+.contact-right {
+    flex-basis: 60%;
+    /* Right column takes 60% of width */
+}
+
+.contact-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-right input,
+.contact-right textarea {
+    width: 100%;
+    padding: 15px;
+    background: #222;
+    border: 0;
+    outline: none;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-right textarea {
+    resize: vertical;
+    /* Allow vertical resize only */
+}
+
+.btn-submit {
+    /* Re-use the same style as the CV button */
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #ff004f;
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: background 0.3s;
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+    /* Make button only as wide as its text */
+}
+
+.btn-submit:hover {
+    background: #d40042;
+}
