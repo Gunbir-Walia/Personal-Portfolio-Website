@@ -3,6 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Link to CSS files -->
+
         <link rel="stylesheet" href="styles/general.css">
         <link rel="stylesheet" href="styles/header.css">
         <link rel="stylesheet" href="styles/home.css">
@@ -12,6 +15,9 @@
         <link rel="stylesheet" href="styles/certifications.css">
         <link rel="stylesheet" href="styles/projects.css">
         <link rel="stylesheet" href="styles/contact.css">
+        <link rel="stylesheet" href="styles/footer.css">
+
+        <!-- Link to Javascript file-->
 
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
@@ -868,16 +874,14 @@
             </section>
 
 
-
             <!-- Contact Section -->
 
             <section id="contact">
                 <div class="container">
-                    <h2>Get in Touch!</h2>
-            
                     <div class="contact-row">
-            
+
                         <div class="contact-left">
+                            <h2>Get in Touch!</h2>
                             <div class="contact-info">
                                 <p class="contact-icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -898,6 +902,7 @@
                                     07405 960024
                                 </p>
                             </div>
+                            
                             <div class="social-links">
                                 <a href="https://www.linkedin.com/in/gunbir-walia" target="_blank" rel="noopener noreferrer">
                                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -914,11 +919,11 @@
                                     </svg>
                                 </a>
                             </div>
-                            <a href="[Path to your CV.pdf]" download="Gunbir Walia - CV.pdf" class="btn-download-cv">Download CV</a>
+                            <a href="Gunbir Walia - CV.pdf" download="Gunbir Walia - CV.pdf" class="btn-download-cv">Download CV</a>
                         </div>
             
                         <div class="contact-right">
-                            <form>
+                            <form action="https://formspree.io/f/mrbrgkaa" method="POST">
                                 <input type="text" name="Name" placeholder="Your Name" required>
                                 <input type="email" name="Email" placeholder="Your Email" required>
                                 <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -930,6 +935,17 @@
                 </div>
             </section>
         </main>
+
+
+        <!-- Footer Section -->
+
+        <footer>
+            <div class="footer-container">
+                <p class="copyright-text">
+                    © 2025 Gunbir Walia. All rights reserved.
+                </p>
+            </div>
+        </footer>
 
         <script src="scripts/main.js"></script>
     </body>

@@ -1,28 +1,19 @@
-/* --- Contact Section --- */
-
 #contact {
     padding: 80px 0 40px;
-    /* Less padding at the bottom */
 }
 
 #contact h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     color: #ddd;
 }
 
 .contact-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
-}
-
-/* --- Contact Left Column --- */
-.contact-left {
-    flex-basis: 35%;
-    /* Left column takes 35% of width */
+    gap: 120px;
 }
 
 .contact-info {
@@ -42,7 +33,6 @@
     width: 24px;
     height: 24px;
     color: #ff004f;
-    /* Highlight color */
 }
 
 .social-links {
@@ -60,7 +50,7 @@
     border-radius: 50%;
     transition: all 0.3s;
 
-    /* Center the SVG icon */
+    /* Centering the SVG icons */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,14 +81,12 @@
 }
 
 .btn-download-cv:hover {
-    background: #d40042;
-    /* Darker pink */
+    background: #a70035;
 }
 
-/* --- Contact Right Column --- */
 .contact-right {
-    flex-basis: 60%;
-    /* Right column takes 60% of width */
+    flex-basis: 870px;
+    max-width: 100%;
 }
 
 .contact-right form {
@@ -122,11 +110,9 @@
 
 .contact-right textarea {
     resize: vertical;
-    /* Allow vertical resize only */
 }
 
 .btn-submit {
-    /* Re-use the same style as the CV button */
     display: inline-block;
     text-decoration: none;
     font-size: 1.1rem;
@@ -139,9 +125,8 @@
     cursor: pointer;
     border: none;
     width: fit-content;
-    /* Make button only as wide as its text */
 }
 
 .btn-submit:hover {
-    background: #d40042;
+    background: #a70035;
 }
