@@ -181,3 +181,33 @@
     color: #fff;
     background: linear-gradient(to right, #ff004f, #4743EF);
 }
+
+/* The following syntax will only run when screen size is less than 768px (Mobile screens) */
+@media (max-width: 768px) {
+    #certifications {
+        padding-top: 40px;
+    }
+
+    #certifications h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    /* Making filter buttons smaller and stack */
+    .filter-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .certifications-list {
+        grid-template-columns: 1fr; /* Changing from auto-fit to a single column */
+        min-height: auto;
+    }
+
+    /* Making pagination buttons smaller */
+    .page-btn {
+        padding: 8px 15px;
+        min-width: 35px;
+        font-size: 0.9rem;
+    }
+}
