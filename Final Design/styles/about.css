@@ -108,3 +108,44 @@
 .tab-content.active-tab {
     display: block; /* Changing the display from 'none' to 'block' for only the active-tab so that its content will be visible */
 }
+
+/* The following syntax will only run when screen size is less than 768px (Mobile screens) */
+@media (max-width: 768px) {
+    #about {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .about-container {
+        flex-direction: column; /* Stacking the columns */
+        width: 100%;
+    }
+
+    .about-image {
+        flex-basis: auto;
+        width: 70%;
+        margin: 0 auto 30px;
+    }
+
+    .about-text {
+        flex-basis: auto;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .tab-link {
+        font-size: 1.1rem;
+        margin-right: 20px;
+    }
+
+    .tab-content ul li {
+        font-size: 1rem;
+    }
+
+    .tab-content ul li span {
+        font-size: 1.1rem;
+    }
+}
