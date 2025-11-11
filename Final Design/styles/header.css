@@ -50,3 +50,106 @@ nav ul li a::after {
 nav ul li a:hover::after {
     width: 100%;
 }
+
+
+/* Hide both icons by default on desktop */
+.icon-hamburger,
+.icon-close {
+    display: none;
+    width: 30px;
+    height: 30px;
+    stroke: #fff;
+    cursor: pointer;
+}
+
+header nav ul li a {
+    font-size: 1.5rem;
+}
+
+nav ul li a::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* Change nav to push hamburger to the far right */
+    nav {
+        justify-content: flex-end;
+    }
+
+    /* Show the hamburger icon */
+    .icon-hamburger {
+        display: block;
+    }
+
+    /* Position the close icon (will be hidden by default) */
+    .icon-close {
+        position: fixed;
+        /* Position relative to screen */
+        top: 20px;
+        right: 20px;
+        z-index: 101;
+        /* Make sure it's above the menu */
+    }
+
+    /* Style the nav list as a side-menu */
+    .header nav ul {
+        background: #111111;
+        /* A slightly different black */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        /* Nice shadow */
+        position: fixed;
+        top: 0;
+        right: -300px;
+        /* Start off-screen */
+        width: 300px;
+        /* Fixed width for the menu */
+        max-width: 80%;
+        /* Max 80% of screen */
+        height: 100vh;
+
+        /* Stack the links vertically */
+        flex-direction: column;
+        justify-content: flex-start;
+        /* Align links to top */
+        align-items: flex-start;
+        /* Align links to left */
+        gap: 25px;
+
+        /* Add padding inside the menu */
+        padding-top: 100px;
+        padding-left: 30px;
+        box-sizing: border-box;
+        /* Include padding in width */
+
+        transition: right 0.5s ease;
+    }
+
+    /* Style for the links in the mobile menu */
+    .header nav ul li a {
+        font-size: 1.5rem;
+    }
+
+    /* Hide the underlines in the mobile menu */
+    nav ul li a::after {
+        display: none;
+    }
+
+    /* This class will be added by JS to show the menu */
+    .header nav ul.open {
+        right: 0;
+        /* Slide the menu in */
+    }
+
+    /* This rule shows the "close" icon
+       ONLY when the menu is open */
+    .header nav ul.open+.icon-hamburger {
+        display: none;
+        /* Hide hamburger */
+    }
+
+    .header nav ul.open+.icon-hamburger+.icon-close {
+        display: block;
+        /* Show close icon */
+    }
+}

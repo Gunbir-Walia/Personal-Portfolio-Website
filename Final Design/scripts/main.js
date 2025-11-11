@@ -31,6 +31,33 @@ document.addEventListener("DOMContentLoaded", function () {
     var typed = new Typed('#typed-text-target', options);
 
 
+    // --- Hamburger Menu (For Mobile Navigation) ---
+    const navList = document.querySelector(".header nav ul");
+    const hamburgerIcon = document.querySelector(".icon-hamburger");
+    const closeIcon = document.querySelector(".icon-close");
+
+    // Function to open the menu
+    const openMenu = () => {
+        navList.classList.add("open");
+    };
+
+    // Function to close the menu
+    const closeMenu = () => {
+        navList.classList.remove("open");
+    };
+
+    // Open menu when hamburger is clicked
+    hamburgerIcon.addEventListener("click", openMenu);
+
+    // Close menu when "X" is clicked
+    closeIcon.addEventListener("click", closeMenu);
+
+    // Close menu when any nav link is clicked (for in-page links)
+    document.querySelectorAll(".header nav ul li a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+
 
     // --- About Me Section Tabs ---
     
