@@ -130,3 +130,33 @@
 .btn-submit:hover {
     background: #a70035;
 }
+
+/* The following syntax will only run when screen size is less than 768px (Mobile screens) */
+@media (max-width: 768px) {
+    #contact {
+        padding-top: 40px;
+    }
+
+    .contact-row {
+        flex-direction: column; /* Stacking the two columns */
+        gap: 40px;
+    }
+
+    .contact-right {
+        flex-basis: auto;
+    }
+
+    #contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-icon {
+        font-size: 1rem;
+    }
+
+    .btn-download-cv,
+    .btn-submit {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

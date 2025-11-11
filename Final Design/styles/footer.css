@@ -20,3 +20,15 @@ footer {
     color: #aaa;
     margin: 0;
 }
+
+/* The following syntax will only run when screen size is less than 768px (Mobile screens) */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 0;
+        margin-top: 20px;
+    }
+
+    .copyright-text {
+        font-size: 0.85rem;
+    }
+}
