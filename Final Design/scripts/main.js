@@ -266,6 +266,43 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // --- Active Nav Link (On scroll) ---
+
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".header nav ul li a");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // entry.isIntersecting means the section is on screen
+            if (entry.isIntersecting) {
+                // Get the ID of the section on screen 
+                const id = entry.target.getAttribute("id");
+
+                // Remove 'nav-active' from all links
+                navLinks.forEach(link => {
+                    link.classList.remove("nav-active");
+                });
+
+                // Find the matching link by its href
+                const matchingLink = document.querySelector(`.header nav ul li a[href="#${id}"]`);
+
+                if (matchingLink) {
+                    matchingLink.classList.add("nav-active");
+                }
+            }
+        });
+    }, {
+        // This threshold means the section must be at least 30% on screen to trigger
+        threshold: 0.3,
+        // This adjusts the "trigger zone" to be 100px from the top, to account for the sticky header
+        rootMargin: "-100px 0px 0px 0px"
+    });
+
+    // Telling the observer to watch all sections
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
 
 

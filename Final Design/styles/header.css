@@ -36,19 +36,37 @@ nav {
     position: relative;
 }
 
+/* --- Underline Animation --- */
 nav ul li a::after {
     content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
     width: 0;
     height: 3px;
-    background: linear-gradient(to right, #ff004f, #4743EF);
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
+    background: linear-gradient(270deg, #ff004f, #4743EF, #ff004f);
+    background-size: 400% 100%;
+    background-position: 0% 50%;
+    transform: translateX(-50%);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-nav ul li a:hover::after {
+/* This applies the style on either hover or when active */
+nav ul li a:hover::after,
+.header nav ul li a.nav-active::after {
     width: 100%;
+    animation: gradientFlow 3s linear infinite;
+}
+
+/* Smooth continuous flow */
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 
@@ -66,12 +84,13 @@ header nav ul li a {
     font-size: 1.5rem;
 }
 
-nav ul li a::after {
-    display: none;
-}
 
 /* The following syntax will only run when screen size is less than 768px (Mobile screens) */
 @media (max-width: 768px) {
+
+    nav ul li a::after {
+        display: none;
+    }
 
     /* Putting the hamburger icon to the far right */
     nav {
@@ -129,4 +148,10 @@ nav ul li a::after {
         display: block;
         /* Show close icon when the side navigation menu is open*/
     }
+}
+
+/* --- Style for the active nav link (on scroll) --- */
+
+.header nav ul li a.nav-active {
+    color: #ff004f;
 }
