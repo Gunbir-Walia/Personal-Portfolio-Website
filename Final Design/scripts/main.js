@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var typed = new Typed('#typed-text-target', options);
 
 
+    
     // --- Hamburger Menu (For Mobile Navigation) ---
     const navList = document.querySelector(".header nav ul");
     const hamburgerIcon = document.querySelector(".icon-hamburger");
