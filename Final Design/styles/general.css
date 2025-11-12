@@ -20,3 +20,38 @@ section {
     padding: 60px 20px 20px 20px;
     scroll-margin-top: 10px;
 }
+
+/* --- Back to Top Button --- */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background: #4743EF;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s, background 0.3s;
+}
+
+.back-to-top-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: #fff;
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top-btn:hover {
+    background: #3a37c8;
+    transform: translateY(-3px);
+}

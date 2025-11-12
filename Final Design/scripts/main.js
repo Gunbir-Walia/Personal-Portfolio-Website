@@ -303,6 +303,35 @@ document.addEventListener("DOMContentLoaded", function () {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+
+    // --- Back to Top Button ---
+
+    const backToTopBtn = document.querySelector(".back-to-top-btn");
+
+    // Function to show/hide the button
+    const toggleBtnVisibility = () => {
+        if (window.scrollY > 400) { // If scrolled more than 400px
+            backToTopBtn.classList.add("visible");
+        } else {
+            backToTopBtn.classList.remove("visible");
+        }
+    };
+
+    // Function to scroll to top
+    const scrollToTop = (e) => {
+        e.preventDefault(); // Stop the link from jumping
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Use the 'smooth' scroll
+        });
+    };
+
+    // Listen for scroll events
+    window.addEventListener("scroll", toggleBtnVisibility);
+
+    // Listen for click events
+    backToTopBtn.addEventListener("click", scrollToTop);
 });
 
 
