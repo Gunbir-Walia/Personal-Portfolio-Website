@@ -95,6 +95,7 @@ header nav ul li a {
     /* Putting the hamburger icon to the far right */
     nav {
         justify-content: flex-end;
+        min-height: 30px;
     }
 
     .icon-hamburger {

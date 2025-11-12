@@ -115,6 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const certList = document.querySelector(".certifications-list"); // List container
     const paginationContainer = document.querySelector(".pagination-controls"); // Pagination control buttons div
 
+    const certSectionTitle = document.querySelector("#certifications h2");
+
     let currentPage = 1;
     let currentFilter = "all";
 
@@ -206,6 +208,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (evt.target.classList.contains("page-btn")) {
                 // Get the corresponding page number
                 const pageNumber = parseInt(evt.target.dataset.page, 10);
+
+                if (pageNumber === currentPage) return;
+
                 currentPage = pageNumber;
 
                 // Show the corresponding page
@@ -215,6 +220,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Update the active button
                 paginationContainer.querySelector(".active").classList.remove("active");
                 evt.target.classList.add("active");
+
+                // Scrolls the user back to the top of the section
+                if (certSectionTitle) {
+                    certSectionTitle.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
             }
         });
     }
