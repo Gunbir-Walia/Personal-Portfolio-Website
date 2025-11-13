@@ -345,6 +345,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Listen for click events
     backToTopBtn.addEventListener("click", scrollToTop);
+
+    // --- 8. MOBILE SWIPE NAVIGATION (NEW CODE) ---
+    let touchStartX = 0; // Records where the touch begins
+    let touchEndX = 0; // Records where the touch ends
+
+    // Function to handle the swipe
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum pixels to count as a swipe
+
+        // Check for a swipe right (to close)
+        if (touchEndX - touchStartX > swipeThreshold) {
+            if (navList.classList.contains("open")) {
+                navList.classList.remove("open");
+            }
+        }
+
+        // Check for a swipe left (to open)
+        if (touchStartX - touchEndX > swipeThreshold) {
+            // Only open if the swipe started near the edge
+            if (touchStartX > window.innerWidth - 70) {
+                if (!navList.classList.contains("open")) {
+                    navList.classList.add("open");
+                }
+            }
+        }
+    }
+
+    // Listen for the start of a touch
+    document.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    // Listen for the end of a touch
+    document.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe(); // Check if it was a swipe
+    });
+
 });
 
 
