@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="relative min-h-screen text-zinc-900 transition-colors duration-300 dark:text-zinc-50">
 
-      {/* --- NEW: Global Animated Ambient Background --- */}
+      {/* Global Animated Ambient Background */}
       <div className="fixed inset-0 z-0 overflow-hidden bg-zinc-50 dark:bg-zinc-950 pointer-events-none">
 
         {/* Animated Rose Glow (Top Right) */}

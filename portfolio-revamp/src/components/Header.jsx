@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Header({ isDarkMode, setIsDarkMode }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    // NEW: State to track which section is currently active for link highlighting
+    // State to track which section is currently active for link highlighting
     const [activeSection, setActiveSection] = useState('home');
 
     // Lock background scroll when the mobile menu is open
@@ -30,7 +30,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
         { name: 'Contact', href: '#contact' }
     ];
 
-    // NEW: Intersection Observer for Scroll Spy (Active Links)
+    // Intersection Observer for Scroll Spy (Active Links)
     useEffect(() => {
         const observerOptions = {
             root: null,
@@ -184,21 +184,29 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
                                     setIsMobileMenuOpen(false);
                                 }
                             }}
-                            // ---------------------------------
                             className="absolute left-0 top-full w-full overflow-hidden border-b border-zinc-200 bg-white shadow-xl dark:border-zinc-800 dark:bg-zinc-950 lg:hidden"
                         >
                             <ul className="flex flex-col gap-4 px-6 py-6 text-base font-semibold text-zinc-600 dark:text-zinc-400">
                                 {navLinks.map((link) => {
-                                    // NEW: Apply the same active logic to the mobile links!
                                     const isActive = activeSection === link.href.substring(1);
                                     return (
                                         <motion.li key={link.name} variants={itemVariants}>
                                             <a
                                                 href={link.href}
-                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                onPointerDown={(e) => {
+                                                    e.preventDefault(); //Stop the browser's default instant jump
+                                                    setIsMobileMenuOpen(false); // Trigger the menu to close
+                                                    document.body.style.overflow = ''; // Instantly unlock the scroll
+
+                                                    // Find the section and smoothly scroll to it
+                                                    const targetSection = document.querySelector(link.href);
+                                                    if (targetSection) {
+                                                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                                                    }
+                                                }}
                                                 className={`block w-full transition-colors ${isActive
-                                                        ? 'text-rose-500 font-bold dark:text-rose-500'
-                                                        : 'hover:text-rose-500 dark:hover:text-rose-400'
+                                                    ? 'text-rose-500 font-bold dark:text-rose-500'
+                                                    : 'hover:text-rose-500 dark:hover:text-rose-400'
                                                     }`}
                                             >
                                                 {link.name}
