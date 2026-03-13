@@ -3,8 +3,6 @@ import FadeIn from './FadeIn';
 export default function Contact() {
     return (
         <section id="contact" className="py-24 relative overflow-hidden">
-            {/* Optional: Add a subtle background glow for the final section */}
-            <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-rose-500/10 blur-[120px] pointer-events-none"></div>
 
             <FadeIn>
                 <div className="mb-16 flex flex-col items-center text-center">

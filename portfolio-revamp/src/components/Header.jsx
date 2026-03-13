@@ -22,6 +22,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
     const navLinks = [
         { name: 'Home', href: '#home' },
         { name: 'About', href: '#about' },
+        { name: 'Skills', href: '#skills' },
         { name: 'Work Experience', href: '#work-experience' },
         { name: 'Education', href: '#education' },
         { name: 'Certifications', href: '#certifications' },

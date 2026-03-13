@@ -2,3 +2,7 @@
 
 /* This tells Tailwind to activate dark mode when the 'dark' class is present */
 @custom-variant dark (&:where(.dark, .dark *));
+
+html {
+    scroll-behavior: smooth;
+}
