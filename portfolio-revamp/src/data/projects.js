@@ -4,7 +4,7 @@ export const projects = [
         title: "E-commerce Platform",
         date: "Dec 2025 - Jan 2026",
         shortDesc: "A comprehensive full-stack e-commerce application featuring a component-based React frontend and a robust Node.js/Express backend with SQL database integration.",
-        skills: ["React.js", "Node.js", "Express.js", "SQL", "Sequelize ORM", "JavaScript", "REST API", "Vite", "Vitest", "HTML/CSS"],
+        skills: ["React.js", "Node.js", "Express.js", "JavaScript", "SQL", "Sequelize ORM",  "REST API", "Vite", "Vitest", "HTML/CSS"],
         repoLink: "https://github.com/Gunbir-Walia/E-commerce-Project",
         bullets: [
             "This project is a comprehensive full-stack e-commerce application developed to simulate a modern online retail platform. It marks an architectural evolution to a decoupled system with a React SPA frontend and a custom Node.js backend.",
@@ -102,7 +102,7 @@ export const projects = [
         title: "Property Tycoon",
         date: "February 2025 - May 2025",
         shortDesc: "This project involved the complete life-cycle of designing, developing, and delivering Property Tycoon – a digital adaptation of Monopoly.",
-        skills: ["Software Engineering", "Agile", "Project Management", "Unity", "C#", "Blender", "Figma", "Git"],
+        skills: ["Software Engineering", "Project Management", "Agile",  "Unity", "C#", "Blender", "Figma", "Git"],
         repoLink: "https://github.com/Gunbir-Walia/Property-Tycoon.git",
         bullets: [
             "This project involved the complete life-cycle of designing, developing, and delivering Property Tycoon – a digital adaptation of Monopoly. Developed in Unity with C#, it was created collaboratively within a small team as part of a Software Engineering module.",
