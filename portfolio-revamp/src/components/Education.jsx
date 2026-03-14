@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import FadeIn from './FadeIn';
+import { educations } from '../data/educations';
 
 function EducationCard({ degree, school, date, grade, details }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,6 @@ function EducationCard({ degree, school, date, grade, details }) {
         <div
             className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all hover:border-rose-300 dark:border-zinc-800/80 dark:bg-zinc-900/40 dark:hover:border-rose-500/50"
         >
-            {/* Clickable Header Area */}
             <div
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex cursor-pointer items-center justify-between p-6 sm:p-8"
@@ -23,7 +23,6 @@ function EducationCard({ degree, school, date, grade, details }) {
                     </div>
                 </div>
 
-                {/* Perfectly Centered SVG Icons */}
                 <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-500 transition-colors dark:bg-zinc-800 dark:text-zinc-400">
                     {isOpen ? (
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
@@ -37,7 +36,6 @@ function EducationCard({ degree, school, date, grade, details }) {
                 </div>
             </div>
 
-            {/* Expandable Details Area */}
             <div
                 className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}
             >
@@ -55,49 +53,6 @@ function EducationCard({ degree, school, date, grade, details }) {
 }
 
 export default function Education() {
-    const educations = [
-        {
-            degree: "B.Sc. (Hons) in Computer Science and Artificial Intelligence",
-            school: "University of Sussex, Brighton, United Kingdom",
-            date: "2023 - 2027 (Ongoing)",
-            grade: "First-Class Honours (Expected)",
-            details: [
-                {
-                    label: "Year 1:",
-                    content: "Data Structures & Algorithms, Introduction to Programming, Further Programming, Mathematical Concepts, Programming Concepts, Introduction to Computer Systems, Introduction to Cognitive Science, Professional Skills"
-                },
-                {
-                    label: "Year 2:",
-                    content: "Applied Machine Learning, Acquired Intelligence & Adaptive Behaviour, Software Engineering, Introduction to Data Science, Compilers and Computer Architecture, Program Analysis, Databases, Decision Processes in Human Cognition, Databases"
-                }
-            ]
-        },
-        {
-            degree: "Indian School Certificate (Class XII) Examinations (CISCE)",
-            school: "Scottish High International School, Gurgaon, India",
-            date: "2016 - 2023",
-            grade: "85% Overall",
-            details: [
-                {
-                    label: "Subjects:",
-                    content: "Computer Science, Mathematics, Physics, Chemistry, English"
-                }
-            ]
-        },
-        {
-            degree: "Indian Certificate of Secondary Education (Class X) Examinations (CISCE)",
-            school: "Scottish High International School, Gurgaon, India",
-            date: "2016 - 2023",
-            grade: "96% Overall",
-            details: [
-                {
-                    label: "Subjects:",
-                    content: "Mathematics, Physics, Chemistry, Biology, Computer Applications, Geography, History & Civics, English Literature, English Language, French"
-                }
-            ]
-        }
-    ];
-
     return (
         <section id="education" className="py-24">
             <FadeIn>
@@ -106,7 +61,6 @@ export default function Education() {
                 </h2>
             </FadeIn>
 
-            {/* Expanded to max-w-7xl to fix horizontal spacing */}
             <div className="mx-auto max-w-7xl space-y-6">
                 {educations.map((edu, index) => (
                     <FadeIn key={index} direction="up" delay={index * 0.1}>
