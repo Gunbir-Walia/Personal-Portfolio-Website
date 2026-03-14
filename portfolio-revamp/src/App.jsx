@@ -13,13 +13,30 @@ import Contact from './components/Contact';
 import BackToTop from './components/BackToTop';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  // Initialize state using a lazy evaluation function
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Check if the user has a saved preference in localStorage
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    // If no saved preference, check their system's OS-level preference
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    // Fallback default
+    return true;
+  });
 
+  // Sync the DOM class and localStorage whenever the state changes
   useEffect(() => {
+    const root = document.documentElement;
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      root.classList.add('dark');
+      localStorage.setItem('portfolio-theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      root.classList.remove('dark');
+      localStorage.setItem('portfolio-theme', 'light');
     }
   }, [isDarkMode]);
 
