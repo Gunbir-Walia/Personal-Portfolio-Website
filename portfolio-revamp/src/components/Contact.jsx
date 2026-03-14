@@ -1,6 +1,40 @@
+import { useState } from 'react';
 import FadeIn from './FadeIn';
 
 export default function Contact() {
+    const [status, setStatus] = useState('idle');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('submitting');
+
+        const form = e.target;
+        const data = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                form.reset();
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+                setTimeout(() => setStatus('idle'), 5000);
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
+    };
+
     return (
         <section id="contact" className="py-24 relative overflow-hidden">
 
@@ -18,7 +52,6 @@ export default function Contact() {
             <div className="mx-auto max-w-6xl">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
 
-                    {/* Left Side: Contact Info */}
                     <FadeIn direction="right" delay={0.2}>
                         <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800/80 dark:bg-zinc-900/40 sm:p-10">
                             <h3 className="mb-6 text-2xl font-bold text-zinc-900 dark:text-zinc-100">
@@ -26,7 +59,6 @@ export default function Contact() {
                             </h3>
 
                             <div className="space-y-6">
-                                {/* Email */}
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-100 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400">
                                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -38,7 +70,6 @@ export default function Contact() {
                                     </a>
                                 </div>
 
-                                {/* Phone */}
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-100 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400">
                                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -51,11 +82,9 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            {/* Socials & CV */}
                             <div className="mt-10 pt-8 border-t border-zinc-100 dark:border-zinc-800">
                                 <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
 
-                                    {/* Social Icons */}
                                     <div className="flex gap-4">
                                         <a href="https://www.linkedin.com/in/gunbir-walia" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-100 text-zinc-600 transition-all hover:bg-[#0A66C2] hover:text-white dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-[#0A66C2] dark:hover:text-white">
                                             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
@@ -65,8 +94,6 @@ export default function Contact() {
                                         </a>
                                     </div>
 
-                                    {/* Download CV Button */}
-                                    {/* Make sure "Gunbir Walia - CV.pdf" is inside your public folder! */}
                                     <a
                                         href="/Gunbir Walia - CV.pdf"
                                         download="Gunbir Walia - CV.pdf"
@@ -83,11 +110,11 @@ export default function Contact() {
                         </div>
                     </FadeIn>
 
-                    {/* Right Side: Formspree Form */}
                     <FadeIn direction="left" delay={0.4}>
                         <form
                             action="https://formspree.io/f/mrbrgkaa"
                             method="POST"
+                            onSubmit={handleSubmit}
                             className="flex flex-col gap-6 rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800/80 dark:bg-zinc-900/40 sm:p-10"
                         >
                             <div>
@@ -128,10 +155,22 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                className="mt-2 w-full rounded-lg bg-zinc-900 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-zinc-800 active:scale-[0.98] dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+                                disabled={status === 'submitting'}
+                                className="mt-2 flex w-full items-center justify-center rounded-lg bg-zinc-900 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-70 active:scale-[0.98] dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
                             >
-                                Send Message
+                                {status === 'submitting' ? 'Sending...' : 'Send Message'}
                             </button>
+
+                            {status === 'success' && (
+                                <p className="text-center text-sm font-medium text-green-600 dark:text-green-400">
+                                    Message sent successfully! I will get back to you soon.
+                                </p>
+                            )}
+                            {status === 'error' && (
+                                <p className="text-center text-sm font-medium text-red-600 dark:text-red-400">
+                                    Oops! Something went wrong. Please try again or email me directly.
+                                </p>
+                            )}
                         </form>
                     </FadeIn>
 
