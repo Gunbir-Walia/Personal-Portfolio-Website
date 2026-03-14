@@ -194,15 +194,20 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
                                             <a
                                                 href={link.href}
                                                 onPointerDown={(e) => {
-                                                    e.preventDefault(); //Stop the browser's default instant jump
-                                                    setIsMobileMenuOpen(false); // Trigger the menu to close
-                                                    document.body.style.overflow = ''; // Instantly unlock the scroll
+                                                    e.preventDefault();
+                                                    setIsMobileMenuOpen(false);
 
-                                                    // Find the section and smoothly scroll to it
-                                                    const targetSection = document.querySelector(link.href);
-                                                    if (targetSection) {
-                                                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                                                    }
+                                                    // Remove the scroll lock
+                                                    document.body.style.overflow = '';
+
+                                                    // Allow the browser layout engine to recalculate the page height 
+                                                    // before attempting to scroll to sections further down the DOM
+                                                    setTimeout(() => {
+                                                        const targetSection = document.querySelector(link.href);
+                                                        if (targetSection) {
+                                                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                                                        }
+                                                    }, 150);
                                                 }}
                                                 className={`block w-full transition-colors ${isActive
                                                     ? 'text-rose-500 font-bold dark:text-rose-500'
