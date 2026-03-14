@@ -23,7 +23,6 @@ export default function Home() {
         };
     }, []);
 
-    // Helper function to handle smooth scrolling for the CTA buttons
     const handleScroll = (e, targetId) => {
         e.preventDefault();
         const targetSection = document.querySelector(targetId);
@@ -35,9 +34,13 @@ export default function Home() {
     return (
         <section id="home" className="flex min-h-[85vh] flex-col justify-center py-20 relative z-10 text-center items-center">
 
+            {/* Subtle digital grid overlay fading out at the edges */}
+            <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+
             <FadeIn direction="up" delay={0.1}>
-                <p className="mb-6 text-sm font-bold tracking-widest text-rose-500 uppercase sm:text-base">
-                    Welcome to my Digital Canvas
+                {/* Sleek, editorial serif kicker in a neutral tone */}
+                <p className="mb-6 text-xl font-serif italic tracking-wide text-zinc-500 dark:text-zinc-400 sm:text-2xl">
+                    Welcome to my digital canvas
                 </p>
             </FadeIn>
 
@@ -51,7 +54,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.4}>
-                <h2 className="mb-10 text-2xl font-bold text-zinc-600 dark:text-zinc-400 sm:text-4xl h-12 sm:h-16">
+                <h2 className="mb-10 h-12 text-2xl font-bold text-zinc-600 dark:text-zinc-400 sm:h-16 sm:text-4xl">
                     I am a <span ref={el} className="text-rose-500"></span>
                 </h2>
             </FadeIn>
@@ -75,13 +78,18 @@ export default function Home() {
                 </div>
             </FadeIn>
 
-            {/* Bouncing Scroll Indicator */}
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-                <FadeIn direction="up" delay={1.2}>
+                {/* Mount-based entrance animation (ignores scroll position) */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+                >
+                    {/* Continuous bouncing animation */}
                     <motion.div
                         animate={{ y: [0, 10, 0] }}
                         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                        className="flex flex-col items-center gap-2 cursor-pointer"
+                        className="flex cursor-pointer flex-col items-center gap-2"
                         onClick={(e) => handleScroll(e, '#about')}
                     >
                         <span className="text-xs font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Scroll</span>
@@ -89,7 +97,7 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                         </svg>
                     </motion.div>
-                </FadeIn>
+                </motion.div>
             </div>
 
         </section>
