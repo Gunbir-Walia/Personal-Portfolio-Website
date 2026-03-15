@@ -171,7 +171,7 @@ export default function Projects() {
                                     {selectedProject.bullets.map((bullet, i) => (
                                         <li key={i} className="flex items-start">
                                             {i !== 0 ? (
-                                                <span className="mr-4 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-rose-500"></span>
+                                                <span className="mr-4 mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-rose-500"></span>
                                             ) : null}
                                             <span className={`text-zinc-600 dark:text-zinc-400 leading-relaxed text-base ${i === 0 ? 'mb-4 font-medium' : ''}`}>
                                                 {bullet}

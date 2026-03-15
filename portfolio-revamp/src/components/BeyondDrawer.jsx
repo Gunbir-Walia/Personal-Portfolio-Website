@@ -73,9 +73,10 @@ export default function BeyondDrawer({ isOpen, onClose }) {
 
                         <div className="flex-1 overflow-y-auto px-6 py-8 sm:px-8 space-y-10">
 
+                            {/* Leadership Section */}
                             <section>
-                                <h3 className="mb-6 text-sm font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Leadership & Initiatives</h3>
-                                <div className="space-y-6">
+                                <h3 className="mb-6 text-sm font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Leadership & Impact</h3>
+                                <div className="space-y-8">
                                     {leadership.map((item, idx) => (
                                         <div key={idx} className="flex gap-4">
                                             <div className="mt-1 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-900">
@@ -85,6 +86,18 @@ export default function BeyondDrawer({ isOpen, onClose }) {
                                                 <h4 className="font-bold text-zinc-900 dark:text-zinc-100">{item.title}</h4>
                                                 <p className="mb-2 text-sm font-medium text-rose-500">{item.role}</p>
                                                 <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{item.description}</p>
+
+                                                {/* Conditionally render bullets if they exist */}
+                                                {item.bullets && (
+                                                    <ul className="mt-3 space-y-2">
+                                                        {item.bullets.map((bullet, i) => (
+                                                            <li key={i} className="flex items-start text-sm text-zinc-600 dark:text-zinc-400">
+                                                                <span className="mr-2 mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-rose-500"></span>
+                                                                <span className="leading-relaxed">{bullet}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
                                             </div>
                                         </div>
                                     ))}
@@ -112,16 +125,35 @@ export default function BeyondDrawer({ isOpen, onClose }) {
 
                             <div className="h-px w-full bg-zinc-100 dark:bg-zinc-800/80"></div>
 
+                            {/* Languages Section */}
                             <section>
                                 <h3 className="mb-6 text-sm font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Languages</h3>
-                                <div className="space-y-3">
+                                <div className="space-y-6">
                                     {languages.map((lang, idx) => (
-                                        <div key={idx} className="flex items-center justify-between rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900/50">
-                                            <div className="flex items-center gap-3">
-                                                <span className="text-xl">{lang.flag}</span>
-                                                <span className="font-bold text-zinc-900 dark:text-zinc-100">{lang.name}</span>
+                                        <div key={idx} className="flex flex-col gap-2.5">
+
+                                            {/* Top Row: Name & Pill */}
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-xl">{lang.flag}</span>
+                                                    <span className="font-bold text-zinc-900 dark:text-zinc-100">{lang.name}</span>
+                                                </div>
+                                                <span className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold text-zinc-600 shadow-sm dark:border-zinc-700/60 dark:bg-zinc-900 dark:text-zinc-300">
+                                                    {lang.proficiency}
+                                                </span>
                                             </div>
-                                            <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">{lang.proficiency}</span>
+
+                                            {/* Bottom Row: Animated Progress Bar */}
+                                            <div className="h-2 w-full overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800/80">
+                                                <motion.div
+                                                    initial={{ width: 0 }}
+                                                    whileInView={{ width: `${lang.level}%` }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ duration: 1, delay: 0.2 + (idx * 0.1), ease: "easeOut" }}
+                                                    className="h-full rounded-full bg-gradient-to-r from-rose-500 to-purple-600"
+                                                />
+                                            </div>
+
                                         </div>
                                     ))}
                                 </div>
@@ -132,6 +164,6 @@ export default function BeyondDrawer({ isOpen, onClose }) {
                 </>
             )}
         </AnimatePresence>,
-        document.body // <-- This tells React to render it outside the normal flow
+        document.body // Tells React to render it outside the normal flow
     );
 }

@@ -32,7 +32,7 @@ export default function Experience() {
                                 <ul className="space-y-4">
                                     {exp.bullets.map((bullet, i) => (
                                         <li key={i} className="flex items-start">
-                                            <span className="mr-4 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-rose-500"></span>
+                                            <span className="mr-4 mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-rose-500"></span>
                                             <span className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-base">
                                                 {bullet}
                                             </span>
