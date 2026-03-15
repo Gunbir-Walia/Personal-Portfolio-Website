@@ -87,7 +87,7 @@ export default function Certifications() {
                     <div className="mt-12 flex justify-center">
                         <button
                             onClick={() => setVisibleCount(prev => prev + 6)}
-                            className="rounded-full border-2 border-zinc-200 px-8 py-3 text-sm font-semibold text-zinc-600 transition-colors hover:border-rose-500 hover:text-rose-500 dark:border-zinc-800 dark:text-zinc-400 dark:hover:border-rose-500 dark:hover:text-rose-400"
+                            className="rounded-full border-2 border-zinc-300 px-8 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-rose-500 hover:text-rose-500 dark:border-zinc-800 dark:text-zinc-400 dark:hover:border-rose-500 dark:hover:text-rose-400"
                         >
                             Load More
                         </button>

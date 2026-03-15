@@ -99,7 +99,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
                     <a
                         href="#home"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-xl font-extrabold tracking-tighter text-zinc-900 dark:text-white"
+                        className="text-xl font-extrabold tracking-tighter bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent transition-transform hover:scale-105"
                     >
                         Gunbir.
                     </a>

@@ -71,7 +71,7 @@ export default function Home() {
                     <a
                         href="#contact"
                         onClick={(e) => handleScroll(e, '#contact')}
-                        className="rounded-full border-2 border-zinc-200 bg-transparent px-8 py-3.5 text-sm font-bold text-zinc-900 transition-all hover:-translate-y-1 hover:border-zinc-900 dark:border-zinc-800 dark:text-white dark:hover:border-white"
+                        className="rounded-full border-2 border-zinc-900 bg-transparent px-8 py-3.5 text-sm font-bold text-zinc-900 transition-all hover:-translate-y-1 hover:bg-zinc-900 hover:text-white dark:border-zinc-800 dark:text-white dark:hover:bg-transparent dark:hover:border-white"
                     >
                         Get in Touch
                     </a>
