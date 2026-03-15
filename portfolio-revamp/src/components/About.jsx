@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import FadeIn from './FadeIn';
+import BeyondDrawer from './BeyondDrawer';
 
 export default function About() {
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
     return (
         <section id="about" className="py-24">
             <FadeIn>
@@ -11,15 +15,10 @@ export default function About() {
 
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
-                {/* Left Column: Image with Offset Frame and Glow */}
                 <FadeIn direction="right" delay={0.2}>
                     <div className="relative mx-auto max-w-md lg:mx-0">
-                        {/* Geometric offset frame for depth (hidden on very small screens) */}
                         <div className="absolute -bottom-6 -right-6 hidden h-full w-full rounded-2xl border-2 border-rose-500/50 dark:border-rose-500/30 sm:block"></div>
-
-                        {/* Ambient Glow */}
                         <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-rose-500 to-purple-600 opacity-20 blur-xl dark:opacity-40"></div>
-
                         <div className="relative z-10 aspect-square overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
                             <img
                                 src="/images/Gunbir.jpg"
@@ -30,7 +29,6 @@ export default function About() {
                     </div>
                 </FadeIn>
 
-                {/* Right Column: Bio Text & Quick Facts */}
                 <FadeIn direction="left" delay={0.4}>
                     <div className="flex flex-col justify-center">
 
@@ -43,9 +41,7 @@ export default function About() {
                             </p>
                         </div>
 
-                        {/* Quick Facts Badges */}
                         <div className="grid grid-cols-1 gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800 sm:grid-cols-2">
-
                             <div className="flex items-center gap-4">
                                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-100 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400">
                                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -55,7 +51,7 @@ export default function About() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="text-sm font-bold text-zinc-900 dark:text-zinc-100">B.Sc. (Hons) CS & AI</p>
+                                    <p className="text-sm font-bold text-zinc-900 dark:text-zinc-100">BSc (Hons) CS & AI</p>
                                     <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">University of Sussex</p>
                                 </div>
                             </div>
@@ -69,16 +65,32 @@ export default function About() {
                                 </div>
                                 <div>
                                     <p className="text-sm font-bold text-zinc-900 dark:text-zinc-100">Location</p>
-                                    <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">Brighton, United Kingdom / Delhi-NCR, India</p>
+                                    <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">United Kingdom 🇬🇧</p>
                                 </div>
                             </div>
+                        </div>
 
+                        {/* Trigger Button for the Drawer */}
+                        <div className="mt-8 pt-6">
+                            <button
+                                onClick={() => setIsDrawerOpen(true)}
+                                className="group flex items-center gap-2 text-sm font-bold text-rose-500 transition-colors hover:text-rose-600 dark:text-rose-400 dark:hover:text-rose-300"
+                            >
+                                Beyond the Tech World
+                                <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
                         </div>
 
                     </div>
                 </FadeIn>
 
             </div>
+
+            {/* Render the drawer component */}
+            <BeyondDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+
         </section>
     );
 }
