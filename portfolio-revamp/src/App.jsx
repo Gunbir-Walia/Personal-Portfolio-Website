@@ -20,11 +20,7 @@ function App() {
     if (savedTheme) {
       return savedTheme === 'dark';
     }
-    // If no saved preference, check their system's OS-level preference
-    if (typeof window !== 'undefined') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-    // Fallback default
+    // If no saved preference, default to dark mode regardless of OS
     return true;
   });
 
