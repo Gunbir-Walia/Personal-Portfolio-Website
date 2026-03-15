@@ -33,7 +33,7 @@ export default function Skills() {
                                     {category.skills.map((skill, skillIndex) => (
                                         <span
                                             key={skillIndex}
-                                            className="rounded-full border border-zinc-200 bg-transparent px-3 py-1.5 text-sm font-medium text-zinc-700 transition-colors hover:border-rose-300 hover:text-rose-600 dark:border-zinc-700/60 dark:text-zinc-300 dark:hover:border-rose-500/60 dark:hover:text-rose-400"
+                                            className="rounded-full border border-zinc-300 bg-transparent px-3 py-1.5 text-sm font-medium text-zinc-700 transition-colors hover:border-rose-400 hover:text-rose-600 dark:border-zinc-700/60 dark:text-zinc-300 dark:hover:border-rose-500/60 dark:hover:text-rose-400"
                                         >
                                             {skill}
                                         </span>
