@@ -37,18 +37,6 @@ export const projects = [
         ]
     },
     {
-        id: "productivity-app",
-        title: "Productivity App",
-        date: "Hackathon Project",
-        shortDesc: "A mobile productivity app to keep track of the amount of time you spend studying and doing extra-curricular activities.",
-        skills: ["FlutterFlow", "Figma", "UI/UX Design", "Mobile Dev"],
-        repoLink: "#",
-        bullets: [
-            "Designed and implemented a mobile productivity app to keep track of the amount of time you spend studying and doing extra-curricular activities as part of my university's hackathon.",
-            "Created wireframes and UI/UX in Figma and implemented functionality using FlutterFlow."
-        ]
-    },
-    {
         id: "face-alignment",
         title: "Face Alignment",
         date: "April 2025 - May 2025",
@@ -139,5 +127,17 @@ export const projects = [
             "Constructed parse trees from user code and performed semantic analysis to ensure correctness, catching type mismatches, undeclared variables, and other logical errors.",
             "Implemented execution for valid code, alongside detailed error reporting to guide users in correcting invalid input."
         ]
-    }
+    },
+    {
+        id: "productivity-app",
+        title: "Productivity App",
+        date: "February 2024",
+        shortDesc: "A mobile productivity app to keep track of the amount of time you spend studying and doing extra-curricular activities.",
+        skills: ["FlutterFlow", "Figma", "UI/UX Design", "Mobile Dev"],
+        repoLink: "#",
+        bullets: [
+            "Designed and implemented a mobile productivity app to keep track of the amount of time you spend studying and doing extra-curricular activities as part of my university's hackathon.",
+            "Created wireframes and UI/UX in Figma and implemented functionality using FlutterFlow."
+        ]
+    },
 ];
