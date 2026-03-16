@@ -49,8 +49,8 @@ export default function Contact() {
                 </div>
             </FadeIn>
 
-            <div className="mx-auto max-w-6xl">
-                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
+            <div className="mx-auto w-full">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-start">
 
                     <FadeIn direction="right" delay={0.2}>
                         <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800/80 dark:bg-zinc-900/40 sm:p-10">
@@ -71,14 +71,28 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex items-center gap-4">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-100 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400">
+                                    {/* Added 'shrink-0' so the icon circle never squishes on small screens */}
+                                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400">
                                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                         </svg>
                                     </div>
-                                    <a href="tel:07405960024" className="text-lg font-medium text-zinc-700 transition-colors hover:text-rose-500 dark:text-zinc-300 dark:hover:text-rose-400">
-                                        07405 960024
-                                    </a>
+
+                                    {/* A flex-col container to stack the numbers */}
+                                    <div className="flex flex-col gap-1.5">
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest w-5">UK</span>
+                                            <a href="tel:+447405960024" className="text-lg font-medium text-zinc-700 transition-colors hover:text-rose-500 dark:text-zinc-300 dark:hover:text-rose-400">
+                                                +44 7405 960024
+                                            </a>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest w-5">IN</span>
+                                            <a href="tel:+917217764591" className="text-lg font-medium text-zinc-700 transition-colors hover:text-rose-500 dark:text-zinc-300 dark:hover:text-rose-400">
+                                                +91 72177 64591
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -148,7 +162,7 @@ export default function Contact() {
                                     id="Message"
                                     rows="5"
                                     required
-                                    className="w-full resize-none rounded-lg border border-zinc-300 bg-zinc-50 p-3 text-zinc-900 transition-colors focus:border-rose-500 focus:outline-none focus:ring-1 focus:ring-rose-500 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:focus:border-rose-500 dark:focus:ring-rose-500"
+                                    className="w-full resize-none rounded-lg border border-zinc-300 bg-zinc-50 p-3 text-zinc-900 placeholder-zinc-500 transition-colors focus:border-rose-500 focus:outline-none focus:ring-1 focus:ring-rose-500 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:placeholder-zinc-400 dark:focus:border-rose-500 dark:focus:ring-rose-500"
                                     placeholder="Hello, I'd like to talk about..."
                                 ></textarea>
                             </div>
