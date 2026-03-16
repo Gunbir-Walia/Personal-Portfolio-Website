@@ -132,38 +132,38 @@ export default function Contact() {
                             className="flex flex-col gap-6 rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800/80 dark:bg-zinc-900/40 sm:p-10"
                         >
                             <div>
-                                <label htmlFor="Name" className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-300">Your Name</label>
+                                <label htmlFor="Name" className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-300">Name</label>
                                 <input
                                     type="text"
                                     name="Name"
                                     id="Name"
                                     required
                                     className="w-full rounded-lg border border-zinc-300 bg-zinc-50 p-3 text-zinc-900 transition-colors focus:border-rose-500 focus:outline-none focus:ring-1 focus:ring-rose-500 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:focus:border-rose-500 dark:focus:ring-rose-500"
-                                    placeholder="John Doe"
+                                    placeholder="What should I call you?"
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="Email" className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-300">Your Email</label>
+                                <label htmlFor="Email" className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-300">Email</label>
                                 <input
                                     type="email"
                                     name="Email"
                                     id="Email"
                                     required
                                     className="w-full rounded-lg border border-zinc-300 bg-zinc-50 p-3 text-zinc-900 transition-colors focus:border-rose-500 focus:outline-none focus:ring-1 focus:ring-rose-500 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:focus:border-rose-500 dark:focus:ring-rose-500"
-                                    placeholder="john@example.com"
+                                    placeholder="Where can I reach you?"
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="Message" className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-300">Your Message</label>
+                                <label htmlFor="Message" className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-300">Message</label>
                                 <textarea
                                     name="Message"
                                     id="Message"
                                     rows="5"
                                     required
                                     className="w-full resize-none rounded-lg border border-zinc-300 bg-zinc-50 p-3 text-zinc-900 placeholder-zinc-500 transition-colors focus:border-rose-500 focus:outline-none focus:ring-1 focus:ring-rose-500 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:placeholder-zinc-400 dark:focus:border-rose-500 dark:focus:ring-rose-500"
-                                    placeholder="Hello, I'd like to talk about..."
+                                    placeholder="What's on your mind?"
                                 ></textarea>
                             </div>
 
