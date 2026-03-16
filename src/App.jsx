@@ -11,6 +11,7 @@ import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import BackToTop from './components/BackToTop';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   // Initialize state using a lazy evaluation function
@@ -79,6 +80,7 @@ function App() {
         <Certifications />
         <Projects />
         <Contact />
+        <Analytics />
       </main>
 
       <footer className="relative z-10 border-t border-zinc-200/50 bg-transparent dark:border-zinc-800/50">
