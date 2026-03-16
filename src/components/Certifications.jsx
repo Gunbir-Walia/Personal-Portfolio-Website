@@ -18,7 +18,7 @@ export default function Certifications() {
     };
 
     return (
-        <section id="certifications" className="py-24">
+        <section id="certifications" className="py-24 min-h-[80vh] flex flex-col justify-center">
             <FadeIn>
                 <div className="mb-12 flex flex-col items-center text-center">
                     <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">

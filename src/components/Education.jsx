@@ -54,7 +54,7 @@ function EducationCard({ degree, school, date, grade, details }) {
 
 export default function Education() {
     return (
-        <section id="education" className="py-24">
+        <section id="education" className="py-24 min-h-[80vh] flex flex-col justify-center">
             <FadeIn>
                 <h2 className="mb-12 text-3xl font-extrabold tracking-tight sm:text-4xl">
                     Education & <span className="text-rose-500">Academics.</span>
