@@ -36,7 +36,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 relative min-h-[80vh] flex flex-col justify-center overflow-hidden">
+        <section id="contact" className="py-24 relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
 
             <FadeIn>
                 <div className="mb-16 flex flex-col items-center text-center">

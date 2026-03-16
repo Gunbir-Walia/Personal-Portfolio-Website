@@ -4,7 +4,7 @@ import { techStack } from '../data/skills';
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-24 min-h-[80vh] flex flex-col justify-center">
+        <section id="skills" className="py-24 min-h-[85vh] flex flex-col justify-center">
             <FadeIn>
                 <div className="mb-16 flex flex-col items-center text-center">
                     <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">

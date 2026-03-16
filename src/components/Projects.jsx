@@ -40,7 +40,7 @@ export default function Projects() {
     const displayedProjects = projects.slice(0, visibleCount);
 
     return (
-        <section id="projects" className="py-24 relative min-h-[80vh] flex flex-col justify-center">
+        <section id="projects" className="py-24 relative min-h-[85vh] flex flex-col justify-center">
             <FadeIn>
                 <div className="mb-12 flex flex-col items-center text-center">
                     <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">

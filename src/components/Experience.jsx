@@ -3,7 +3,7 @@ import { experiences } from '../data/experiences';
 
 export default function Experience() {
     return (
-        <section id="work-experience" className="py-24 min-h-[80vh] flex flex-col justify-center">
+        <section id="work-experience" className="py-24 min-h-[85vh] flex flex-col justify-center">
             <FadeIn>
                 <h2 className="mb-12 text-3xl font-extrabold tracking-tight sm:text-4xl">
                     Work <span className="text-rose-500">Experience.</span>

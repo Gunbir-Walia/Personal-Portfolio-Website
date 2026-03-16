@@ -6,7 +6,7 @@ export default function About() {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     return (
-        <section id="about" className="py-24 min-h-[80vh] flex flex-col justify-center">
+        <section id="about" className="py-24 min-h-[90vh] flex flex-col justify-center">
             <FadeIn>
                 <h2 className="mb-12 text-3xl font-extrabold tracking-tight sm:text-4xl">
                     About <span className="text-rose-500">Me.</span>
