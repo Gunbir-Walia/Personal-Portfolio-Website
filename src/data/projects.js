@@ -1,5 +1,69 @@
 export const projects = [
     {
+        id: "braitenberg",
+        title: "Evolutionary Braitenberg Behaviour",
+        date: "March 2025 - May 2025",
+        shortDesc: "This project explores the hypothesis that simple agents evolved using microbial genetic algorithms can coherently exhibit a range of intricate behaviours within a simulated environment.",
+        skills: ["Artificial Intelligence", "Genetic Algorithms", "Embodied AI", "Python"],
+        repoLink: "https://github.com/Gunbir-Walia/Evolutionary-Braitenberg-Behaviour.git",
+        bullets: [
+            "This project explores the hypothesis that simple agents evolved using microbial genetic algorithms can coherently exhibit a range of intricate behaviours within a simulated environment. However, these behaviours degrade in performance or consistency when transferred to physical robots due to the reality gap between the real world and a controlled simulation.",
+            "Designed and developed a simulated 2D environment in Python to evolve Braitenberg vehicles capable of exhibiting complex, animal-like behaviours using microbial genetic algorithms.",
+            "Engineered agents with minimal cognitive architecture to display a rich repertoire of behaviours, including aggressor, coward, lover, explorer, shy, one-eyed phototaxis, and sequential phototaxis - each evolved through tailored fitness functions aligned with specific behavioural objectives.",
+            "Modelled each agent’s genome as weighted sensor-to-motor connections with independent biases, enabling direct evolutionary optimisation of sensorimotor couplings.",
+            "Transferred evolved genotypes to a physical robot using a Raspberry Pi Pico and MicroPython, analysing performance degradation due to the simulation-to-reality gap.",
+            "Addressed real-world embodiment challenges such as sensor noise, hardware asymmetries, and directional sensory constraints, by adapting training conditions and motor bias strategies.",
+            "Explored and critically analysed foundational principles of embodied cognition, active perception, and sensorimotor intelligence, highlighting how emergent behaviour arises from agent–environment interactions rather than internal complexity."
+        ]
+    },
+    {
+        id: "face-alignment",
+        title: "Face Alignment",
+        date: "April 2025 - May 2025",
+        shortDesc: "A facial landmark detection system for precise face alignment, a core task in computer vision with applications in identity verification, emotion recognition, and AR/VR technologies.",
+        skills: ["Machine Learning", "Computer Vision", "Python"],
+        repoLink: "https://github.com/Gunbir-Walia/Face-Alignment.git",
+        bullets: [
+            "This project implements a facial landmark detection system for precise face alignment, a core task in computer vision with applications in identity verification, emotion recognition, and AR/VR technologies.",
+            "Preprocessed facial images by standardising resolution, normalising illumination, and reducing image noise to deliver consistent, high-quality inputs for model training.",
+            "Extracted Scale-Invariant Feature Transform (SIFT) descriptors around candidate landmark regions to capture robust local texture features resistant to scale, rotation, and lighting variations.",
+            "Implemented a cascaded ridge regression framework, where successive regression stages refined landmark predictions iteratively to improve accuracy.",
+            "Assessed model performance using normalised mean error (NME) across diverse facial poses and expressions, demonstrating reliable landmark localisation and strong accuracy, even under challenging conditions.",
+            "Analysed system limitations, including susceptibility to severe occlusions and extreme profile views, and proposed enhancements through data augmentation, deep feature extraction, and CNN-based architectures for improved generalisation."
+        ]
+    },
+    {
+        id: "spam-detection",
+        title: "Spam Detection",
+        date: "April 2025 - May 2025",
+        shortDesc: "A binary text classification system to distinguish between spam and legitimate messages, addressing real-world challenges in automated email and message filtering.",
+        skills: ["Machine Learning", "Natural Language Processing", "Python"],
+        repoLink: "https://github.com/Gunbir-Walia/Spam-Detection",
+        bullets: [
+            "This project implements a binary text classification system to distinguish between spam and legitimate messages, addressing real-world challenges in automated email and message filtering.",
+            "Conducted comprehensive text preprocessing including lowercasing, removal of punctuation/special characters, tokenisation, stopword removal, and stemming to normalise and clean the dataset.",
+            "Engineered TF-IDF vectorisation with both unigrams and bigrams, capped at the top 5,000 most frequent terms to balance contextual richness with computational efficiency.",
+            "Trained and evaluated Multinomial Naïve Bayes and Logistic Regression classifiers, analysing trade-offs between speed, interpretability, and predictive performance.",
+            "Achieved 96% accuracy with Naïve Bayes and 98% accuracy with Logistic Regression on the validation set, with the latter demonstrating superior precision, recall, and F1-scores.",
+            "Investigated and documented failure cases, such as text obfuscation and contextually ambiguous non-spam messages, identifying limitations of surface-level n-gram models and opportunities for enhancement through deeper contextual embeddings."
+        ]
+    },
+    {
+        id: "property-tycoon",
+        title: "Property Tycoon",
+        date: "February 2025 - May 2025",
+        shortDesc: "This project involved the complete life-cycle of designing, developing, and delivering Property Tycoon – a digital adaptation of Monopoly.",
+        skills: ["Software Engineering", "Project Management", "Agile", "Unity", "C#", "Blender", "Figma", "Git"],
+        repoLink: "https://github.com/Gunbir-Walia/Property-Tycoon.git",
+        bullets: [
+            "This project involved the complete life-cycle of designing, developing, and delivering Property Tycoon – a digital adaptation of Monopoly. Developed in Unity with C#, it was created collaboratively within a small team as part of a Software Engineering module.",
+            "Created and rendered 3D assets in Blender and used Figma to design various UI elements.",
+            "Managed project documentation including requirements analysis, risk management, testing plans and sprint documentation, ensuring clear traceability from client expectations to delivered features.",
+            "Utilised Git & GitHub for version control and OneDrive for asset and documentation sharing, maintaining a smooth workflow and minimising redundancies.",
+            "Coordinated sprint planning and task allocation using Gantt and PERT charts, following Agile methodology to deliver functional prototypes at the end of each sprint. Maintained detailed changelogs for stakeholder review, mirroring real-world development practices and fostering adaptability, problem-solving, and collaborative skills."
+        ]
+    },
+    {
         id: "ecommerce",
         title: "E-commerce Platform",
         date: "Dec 2025 - Jan 2026",
@@ -34,70 +98,6 @@ export const projects = [
             "Engineered a comprehensive search and filtering system that utilizes URL parameters for shareable search results, featuring keyword-based filtering and case-insensitive matching logic.",
             "Built a realistic \"Order Tracking\" system that calculates real-time delivery progress based on timestamps, dynamically updating UI status bars and \"delivered\" states.",
             "Adopted Test-Driven Development (TDD) principles by writing extensive unit and integration tests with Jasmine, covering critical paths like cart calculations, money formatting, and edge-case handling."
-        ]
-    },
-    {
-        id: "face-alignment",
-        title: "Face Alignment",
-        date: "April 2025 - May 2025",
-        shortDesc: "A facial landmark detection system for precise face alignment, a core task in computer vision with applications in identity verification, emotion recognition, and AR/VR technologies.",
-        skills: ["Machine Learning", "Computer Vision", "Python"],
-        repoLink: "https://github.com/Gunbir-Walia/Face-Alignment.git",
-        bullets: [
-            "This project implements a facial landmark detection system for precise face alignment, a core task in computer vision with applications in identity verification, emotion recognition, and AR/VR technologies.",
-            "Preprocessed facial images by standardising resolution, normalising illumination, and reducing image noise to deliver consistent, high-quality inputs for model training.",
-            "Extracted Scale-Invariant Feature Transform (SIFT) descriptors around candidate landmark regions to capture robust local texture features resistant to scale, rotation, and lighting variations.",
-            "Implemented a cascaded ridge regression framework, where successive regression stages refined landmark predictions iteratively to improve accuracy.",
-            "Assessed model performance using normalised mean error (NME) across diverse facial poses and expressions, demonstrating reliable landmark localisation and strong accuracy, even under challenging conditions.",
-            "Analysed system limitations, including susceptibility to severe occlusions and extreme profile views, and proposed enhancements through data augmentation, deep feature extraction, and CNN-based architectures for improved generalisation."
-        ]
-    },
-    {
-        id: "spam-detection",
-        title: "Spam Detection",
-        date: "April 2025 - May 2025",
-        shortDesc: "A binary text classification system to distinguish between spam and legitimate messages, addressing real-world challenges in automated email and message filtering.",
-        skills: ["Machine Learning", "Natural Language Processing", "Python"],
-        repoLink: "https://github.com/Gunbir-Walia/Face-Alignment.git",
-        bullets: [
-            "This project implements a binary text classification system to distinguish between spam and legitimate messages, addressing real-world challenges in automated email and message filtering.",
-            "Conducted comprehensive text preprocessing including lowercasing, removal of punctuation/special characters, tokenisation, stopword removal, and stemming to normalise and clean the dataset.",
-            "Engineered TF-IDF vectorisation with both unigrams and bigrams, capped at the top 5,000 most frequent terms to balance contextual richness with computational efficiency.",
-            "Trained and evaluated Multinomial Naïve Bayes and Logistic Regression classifiers, analysing trade-offs between speed, interpretability, and predictive performance.",
-            "Achieved 96% accuracy with Naïve Bayes and 98% accuracy with Logistic Regression on the validation set, with the latter demonstrating superior precision, recall, and F1-scores.",
-            "Investigated and documented failure cases, such as text obfuscation and contextually ambiguous non-spam messages, identifying limitations of surface-level n-gram models and opportunities for enhancement through deeper contextual embeddings."
-        ]
-    },
-    {
-        id: "braitenberg",
-        title: "Evolutionary Braitenberg Behaviour",
-        date: "March 2025 - May 2025",
-        shortDesc: "This project explores the hypothesis that simple agents evolved using microbial genetic algorithms can coherently exhibit a range of intricate behaviours within a simulated environment.",
-        skills: ["Artificial Intelligence", "Genetic Algorithms", "Embodied AI", "Python"],
-        repoLink: "https://github.com/Gunbir-Walia/Evolutionary-Braitenberg-Behaviour.git",
-        bullets: [
-            "This project explores the hypothesis that simple agents evolved using microbial genetic algorithms can coherently exhibit a range of intricate behaviours within a simulated environment. However, these behaviours degrade in performance or consistency when transferred to physical robots due to the reality gap between the real world and a controlled simulation.",
-            "Designed and developed a simulated 2D environment in Python to evolve Braitenberg vehicles capable of exhibiting complex, animal-like behaviours using microbial genetic algorithms.",
-            "Engineered agents with minimal cognitive architecture to display a rich repertoire of behaviours, including aggressor, coward, lover, explorer, shy, one-eyed phototaxis, and sequential phototaxis - each evolved through tailored fitness functions aligned with specific behavioural objectives.",
-            "Modelled each agent’s genome as weighted sensor-to-motor connections with independent biases, enabling direct evolutionary optimisation of sensorimotor couplings.",
-            "Transferred evolved genotypes to a physical robot using a Raspberry Pi Pico and MicroPython, analysing performance degradation due to the simulation-to-reality gap.",
-            "Addressed real-world embodiment challenges such as sensor noise, hardware asymmetries, and directional sensory constraints, by adapting training conditions and motor bias strategies.",
-            "Explored and critically analysed foundational principles of embodied cognition, active perception, and sensorimotor intelligence, highlighting how emergent behaviour arises from agent–environment interactions rather than internal complexity."
-        ]
-    },
-    {
-        id: "property-tycoon",
-        title: "Property Tycoon",
-        date: "February 2025 - May 2025",
-        shortDesc: "This project involved the complete life-cycle of designing, developing, and delivering Property Tycoon – a digital adaptation of Monopoly.",
-        skills: ["Software Engineering", "Project Management", "Agile",  "Unity", "C#", "Blender", "Figma", "Git"],
-        repoLink: "https://github.com/Gunbir-Walia/Property-Tycoon.git",
-        bullets: [
-            "This project involved the complete life-cycle of designing, developing, and delivering Property Tycoon – a digital adaptation of Monopoly. Developed in Unity with C#, it was created collaboratively within a small team as part of a Software Engineering module.",
-            "Created and rendered 3D assets in Blender and used Figma to design various UI elements.",
-            "Managed project documentation including requirements analysis, risk management, testing plans and sprint documentation, ensuring clear traceability from client expectations to delivered features.",
-            "Utilised Git & GitHub for version control and OneDrive for asset and documentation sharing, maintaining a smooth workflow and minimising redundancies.",
-            "Coordinated sprint planning and task allocation using Gantt and PERT charts, following Agile methodology to deliver functional prototypes at the end of each sprint. Maintained detailed changelogs for stakeholder review, mirroring real-world development practices and fostering adaptability, problem-solving, and collaborative skills."
         ]
     },
     {
