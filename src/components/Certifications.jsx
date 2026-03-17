@@ -44,7 +44,7 @@ export default function Certifications() {
                 </div>
             </FadeIn>
 
-            <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid w-full max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {displayedCerts.map((cert, index) => (
                     <FadeIn key={`${activeFilter}-${cert.title}`} direction="up" delay={index * 0.05}>
                         <div className="group flex h-full flex-col justify-between rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-rose-300 hover:shadow-md dark:border-zinc-800/80 dark:bg-zinc-900/40 dark:hover:border-rose-500/50">
