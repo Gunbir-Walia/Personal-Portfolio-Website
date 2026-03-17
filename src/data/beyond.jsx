@@ -72,3 +72,18 @@ export const languages = [
     { name: "Hindi", proficiency: "Native / Mother Tongue", flag: "🇮🇳", level: 100 },
     { name: "French", proficiency: "Intermediate", flag: "🇫🇷", level: 60 }
 ];
+
+export const languageCertifications = [
+    {
+        title: "IELTS",
+        score: "Overall Band Score: 8.5/9.0",
+        issuer: "British Council / IDP",
+        date: "2022" 
+    },
+    {
+        title: "DELF A1",
+        score: "Diploma in French Language",
+        issuer: "French Ministry of Education",
+        date: "2019"
+    }
+];

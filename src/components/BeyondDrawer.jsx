@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
-import { leadership, pursuits, languages } from '../data/beyond';
+import { leadership, pursuits, languages, languageCertifications } from '../data/beyond';
 
 export default function BeyondDrawer({ isOpen, onClose }) {
 
@@ -157,6 +157,34 @@ export default function BeyondDrawer({ isOpen, onClose }) {
                                         </div>
                                     ))}
                                 </div>
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: 0.3 }}
+                                    className="mt-8 pt-8 border-t border-zinc-100 dark:border-zinc-800/80"
+                                >
+                                    <h4 className="mb-4 text-sm font-bold text-zinc-900 dark:text-zinc-100">Certifications & Test Scores</h4>
+                                    <div className="grid gap-4 sm:grid-cols-2">
+                                        {languageCertifications.map((cert, index) => (
+                                            <div
+                                                key={index}
+                                                className="flex flex-col justify-between rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 dark:border-zinc-800/80 dark:bg-zinc-900/40"
+                                            >
+                                                <div>
+                                                    <h5 className="font-bold text-zinc-900 dark:text-zinc-100">{cert.title}</h5>
+                                                    <p className="mt-1 text-sm font-medium text-rose-500">{cert.score}</p>
+                                                </div>
+                                                <div className="mt-4 flex items-center justify-between text-xs font-medium text-zinc-500 dark:text-zinc-400">
+                                                    <span>{cert.issuer}</span>
+                                                    <span>{cert.date}</span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </motion.div>
+
                             </section>
 
                         </div>
