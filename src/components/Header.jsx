@@ -93,16 +93,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
     return (
         <>
             <header className="fixed left-0 top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
-                <div className="relative z-50 mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
-                    {/* Logo */}
-                    <a
-                        href="#home"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-xl font-extrabold tracking-tighter bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent transition-transform hover:scale-105"
-                    >
-                        Gunbir.
-                    </a>
+                <div className="relative z-50 mx-auto flex max-w-7xl items-center justify-center px-6 py-4">
 
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:block">
@@ -129,7 +120,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
                     </nav>
 
                     {/* Right Side: Dark Mode Toggle & Hamburger Menu */}
-                    <div className="flex items-center gap-4">
+                    <div className="absolute right-6 flex items-center gap-4">
 
                         {/* Animated Dark Mode Toggle */}
                         <button
