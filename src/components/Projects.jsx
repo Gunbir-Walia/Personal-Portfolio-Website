@@ -143,7 +143,7 @@ export default function Projects() {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
                             transition={{ type: "spring", duration: 0.5 }}
-                            className="fixed left-1/2 top-1/2 z-[101] w-[90%] max-w-4xl -translate-x-1/2 -translate-y-1/2 mt-8 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
+                            className="fixed left-1/2 top-1/2 z-[101] w-[90%] max-w-4xl -translate-x-1/2 -translate-y-1/2 mt-6 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
                         >
                             <div className="flex items-center justify-between border-b border-zinc-100 px-6 py-4 dark:border-zinc-800 sm:px-8">
                                 <h3 className="text-2xl font-bold text-rose-500">{selectedProject.title}</h3>
